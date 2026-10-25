@@ -2,8 +2,8 @@
 
 ## Mocking
 
-Replacing a real dependency with a fake object so you can control behavior and inspect interactions.
-Reasons: return fake data, avoid hitting DBs/APIs, verify something was called.
+Replacing a real dependency with a fake object so you can control behavior and inspect interactions. Reasons: return
+fake data, avoid hitting DBs/APIs, verify something was called.
 
 ```python
 from unittest.mock import Mock
@@ -44,8 +44,7 @@ patch("requests.post")     # usually wrong – service already holds its own ref
 ```
 
 Tips: `patch.object(Class, "method")`; `autospec=True` makes the mock respect the real signature; patches are undone
-when the
-`with` block / decorated test ends.
+when the `with` block / decorated test ends.
 
 ```python
 @patch("service.requests.get")

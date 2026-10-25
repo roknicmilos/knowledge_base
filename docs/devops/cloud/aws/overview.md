@@ -1,8 +1,7 @@
 # AWS overview
 
 Amazon Web Services – a comprehensive cloud platform offering compute, storage, databases, ML, analytics, networking and
-more
-over the internet, without owning physical hardware.
+more over the internet, without owning physical hardware.
 
 ## Key features
 
@@ -26,13 +25,11 @@ over the internet, without owning physical hardware.
 | Security & compliance | Shield (DDoS), KMS (keys), Artifact (compliance reports)                                                         |
 
 > **Verify:** AWS CodeCommit stopped accepting new customers in 2024 and its status has changed since – prefer
-> GitHub/GitLab
-> unless you have a reason.
+> GitHub/GitLab unless you have a reason.
 
 ## Benefits
 
 Cost-effective (spot, reserved instances), flexible (many OSes/languages/frameworks), reliable (multi-region/AZ),
-scalable,
-globally available, constantly innovating.
+scalable, globally available, constantly innovating.
 
 Related: [VPC](../vpc.md), [Terraform](../../terraform.md).

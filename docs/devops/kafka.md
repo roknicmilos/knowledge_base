@@ -1,21 +1,19 @@
 # Apache Kafka
 
 A distributed **event streaming platform** for high volumes of real-time data. Originally developed at LinkedIn, now an
-Apache
-Software Foundation project. Used for real-time data pipelines, streaming applications and event-driven architectures.
+Apache Software Foundation project. Used for real-time data pipelines, streaming applications and event-driven
+architectures.
 
 ## Key concepts
 
 - **Producer** – publishes (writes) messages to topics.
 - **Consumer** – subscribes to topics and reads messages, tracking its position by offset.
 - **Consumer group** – consumers that share a topic's partitions: each partition is read by one consumer in the group,
-  giving
-  parallel processing and scaling.
+  giving parallel processing and scaling.
 - **Message (record)** – header (metadata), key and value (payload) (+ timestamp).
 - **Topic** – named feed of records; partitioned and replicated across brokers.
 - **Partition** – ordered, immutable sequence of records; enables horizontal scaling and parallel consumption.
-  **Ordering is
-  guaranteed only within a partition** (records with the same key go to the same partition).
+  **Ordering is guaranteed only within a partition** (records with the same key go to the same partition).
 - **Broker** – a Kafka server that stores data and serves clients. **Cluster** – brokers working together.
 - **Offset** – unique ID of a record within a partition.
 - **Replication** – each partition has one *leader* (handles reads/writes) and follower replicas for durability and
@@ -39,8 +37,7 @@ replicated), fault tolerance, real-time processing.
 ## Use cases
 
 Real-time analytics · log aggregation · event sourcing · messaging backbone for microservices · real-time data
-integration
-pipelines.
+integration pipelines.
 
 ## Ecosystem
 

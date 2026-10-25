@@ -3,15 +3,13 @@
 ## Cache
 
 A high-speed storage layer holding a subset of data (typically from a slower store) for faster access to frequently used
-or
-expensive-to-compute data. Reduces latency, load on primary sources (DB, file storage, external API), and improves
+or expensive-to-compute data. Reduces latency, load on primary sources (DB, file storage, external API), and improves
 scalability and user experience.
 
 ### Strategies
 
 - **Lazy loading / cache-aside** – the app reads from the cache first; on a miss it fetches from the primary source,
-  stores
-  it in the cache and returns it.
+  stores it in the cache and returns it.
 - **Write-through** – every write to the primary source is also written to the cache (synchronously).
 - **Write-back / write-behind** – write to the cache first, flush to the primary source later (fast, risk of data loss).
 - **Eviction policies** – LRU, LFU, FIFO when the cache is full.

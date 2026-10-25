@@ -13,10 +13,8 @@ Each entry: what it is, why it happens, how to handle it.
 - **Why:** training is a one-time (or periodic) pass over a fixed snapshot, not continuous learning
   ([pre-training](concepts/training-and-inference.md#pre-training)).
 - **Handle:** don't trust unaided memory for anything that changes (versions, prices, news, "latest" APIs). Ground it
-  with
-  a web search tool, [RAG](rag.md), or pasted current docs. Ask the model for its cutoff and treat time-sensitive claims
-  as
-  unverified.
+  with a web search tool, [RAG](rag.md), or pasted current docs. Ask the model for its cutoff and treat time-sensitive
+  claims as unverified.
 
 ## Hallucination
 
@@ -25,10 +23,8 @@ Each entry: what it is, why it happens, how to handle it.
 - **Why:** the model predicts plausible next tokens; it doesn't look facts up. Fluent, plausible text is what it was
   trained to produce, not verified text.
 - **Handle:** confident tone is no signal of correctness. Verify anything checkable (citations, exact numbers, API
-  names,
-  quotes). Ground with RAG or tools (search, docs, code execution). Run the code; check that the cited source really
-  says
-  that.
+  names, quotes). Ground with RAG or tools (search, docs, code execution). Run the code; check that the cited source
+  really says that.
 
 ## Context window limits
 
@@ -36,8 +32,8 @@ Each entry: what it is, why it happens, how to handle it.
   degrades before the limit.
 - **Why:** fixed maximum input size, and attending well to every token gets harder as text grows.
 - **Handle:** keep prompts focused: trim old turns, summarize, retrieve only what's relevant. For long work, split into
-  stages and carry forward only what the next stage needs. See
-  [Context management](claude/claude-code/context-management.md).
+  stages and carry forward only what the next stage needs. See [Context
+  management](claude/claude-code/context-management.md).
 
 ## Attention dilution
 
@@ -68,35 +64,31 @@ Each entry: what it is, why it happens, how to handle it.
 
 - **What:** by default a model remembers nothing across conversations.
 - **Why:** the model is stateless and re-run per request; "memory" is the application re-injecting prior context.
-- **Handle:** re-supply context that matters, or use the product's memory mechanism (e.g. `CLAUDE.md`, see
-  [Memory and rules](claude/claude-code/memory-and-rules.md)) for standing facts.
+- **Handle:** re-supply context that matters, or use the product's memory mechanism (e.g. `CLAUDE.md`, see [Memory and
+  rules](claude/claude-code/memory-and-rules.md)) for standing facts.
 
 ## Lack of real-world grounding
 
 - **What:** the model only knows its training data and the current context; it has no access to live systems or the
   physical world and can't confirm a claim beyond pattern matching.
-- **Why:** it is a text-in/text-out predictor. Outside connections (search, DB, live API) are bolted on via
-  [tool use or MCP](concepts/tool-use-and-mcp.md).
+- **Why:** it is a text-in/text-out predictor. Outside connections (search, DB, live API) are bolted on via [tool use or
+  MCP](concepts/tool-use-and-mcp.md).
 - **Handle:** for current or verifiable state (balances, live prices, system status) give it a tool to check. Treat
-  claims
-  about "what's currently true" as hypotheses.
+  claims about "what's currently true" as hypotheses.
 
 ## Sycophancy
 
 - **What:** a tendency to agree with, validate or flatter the user's framing even when wrong: confirming a flawed
-  premise,
-  softening pushback, reversing a correct answer after the user shows doubt.
+  premise, softening pushback, reversing a correct answer after the user shows doubt.
 - **Why:** training that optimizes for human approval (including RLHF) can reward agreeable answers over correct but
   unwelcome ones.
 - **Handle:** explicitly ask for pushback ("tell me if this is wrong", "argue the other side"). Be suspicious of a
-  sudden
-  reversal right after you express doubt; ask the model to justify its position independently.
+  sudden reversal right after you express doubt; ask the model to justify its position independently.
 
 ## Weak numeric / exact computation
 
 - **What:** unreliable at precise arithmetic, large numbers and exact counting (characters in a word), especially
-  without
-  help.
+  without help.
 - **Why:** it predicts plausible tokens from text patterns rather than running a calculator, so it approximates.
 - **Handle:** give it a tool (code execution, calculator, script) and treat mentally computed numbers as estimates until
   verified.

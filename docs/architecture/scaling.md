@@ -20,16 +20,13 @@ Add more machines/instances and spread the load (cluster, load-balanced cloud in
 ## Horizontal scaling vs distributed systems / microservices
 
 Related but not the same: microservices/distributed systems are an *architecture*, horizontal scaling is a *scaling
-strategy*
-applied inside them (or inside a monolith).
+strategy* applied inside them (or inside a monolith).
 
 - **Horizontal scaling:** run many identical instances of one service, e.g. a stateless checkout service ×20 behind a
-  load
-  balancer.
+  load balancer.
 - **Distributed system (microservices):** split into services with different responsibilities (`user-service`,
   `order-service`, `inventory-service`), talking via APIs/messaging, possibly with their own data stores. Each service
-  can then
-  be scaled independently (e.g. scale `order-service` for high order traffic).
+  can then be scaled independently (e.g. scale `order-service` for high order traffic).
 
 ## Single vs multiple databases in distributed systems
 
@@ -46,7 +43,6 @@ applied inside them (or inside a monolith).
 - **Multiple DBs:** large microservice systems, differing performance/scaling needs, high availability, strong DDD
   boundaries.
 - **Hybrid:** start with one DB, split as you grow; keep core transactional data (orders, payments) together and move
-  logs,
-  analytics, search to specialized stores.
+  logs, analytics, search to specialized stores.
 
 Related: [load balancer](load-balancer.md), [monolith vs microservices](monolith-vs-microservices.md).

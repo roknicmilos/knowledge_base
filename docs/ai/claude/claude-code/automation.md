@@ -15,8 +15,7 @@ claude -p "query" --output-format json | jq -r '.result'
 - `--continue` resumes the most recent conversation; `--resume <session_id>` a specific one, so multi-turn scripted
   workflows are possible.
 - `--output-format`: `text` (default), `json` (one object per run with `result`, `session_id`, `total_cost_usd`; handy
-  to
-  log cost per call), `stream-json` (newline-delimited events for real-time consumption).
+  to log cost per call), `stream-json` (newline-delimited events for real-time consumption).
 - **Gotcha:** print mode skips interactive-only UX such as the workspace trust dialog, so only run it in directories you
   already trust.
 

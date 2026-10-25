@@ -6,16 +6,15 @@ readable syntax. The reference implementation, **CPython**, is written in C and 
 - Extensive standard library and ecosystem; large community; multi-paradigm (procedural, OOP, functional).
 - Used in web development, data science, ML/AI, automation, scripting – a general-purpose language.
 - **Pros:** easy to learn, rapid development, huge community. **Cons:** slower than compiled languages (C++), more
-  memory,
-  less suited to low-level or very high-performance work.
+  memory, less suited to low-level or very high-performance work.
 
 ## Language characteristics
 
 - **Suitable for rapid development** – readable syntax, comprehensive standard library, strong community; fast
   prototyping.
 - **Interpreted (bytecode VM)** – CPython compiles source to bytecode and runs it on a virtual machine (not
-  line-by-line;
-  an experimental JIT exists since 3.13). Great for development speed, slower runtime than compiled languages.
+  line-by-line; an experimental JIT exists since 3.13). Great for development speed, slower runtime than compiled
+  languages.
 - **Dynamically typed** – types are determined at runtime: flexible and concise, but type errors surface at runtime. See
   [type hints](type-hints.md).
 - **Strongly typed** – no implicit conversions between incompatible types:
@@ -33,15 +32,14 @@ readable syntax. The reference implementation, **CPython**, is written in C and 
 ### Object-oriented
 
 Python is OOP at its core – everything (functions, types, integers) is an object. Classes, inheritance, encapsulation,
-polymorphism and abstraction are covered in [OOP](../../fundamentals/oop.md) (with Python examples).
-See also [MRO](mro.md), [interfaces](interfaces.md), [metaclasses](metaclasses.md).
+polymorphism and abstraction are covered in [OOP](../../fundamentals/oop.md) (with Python examples). See also
+[MRO](mro.md), [interfaces](interfaces.md), [metaclasses](metaclasses.md).
 
 ### Functional
 
 - **First-class and higher-order functions** – functions can be passed and returned.
 - **Pure functions** – same output for same arguments and no side effects (not enforced, but encouraged);
-  **immutability**
-  – data isn't modified after creation (not enforced either).
+  **immutability** – data isn't modified after creation (not enforced either).
 - Tools: `map()`, `filter()`, `functools.reduce()`, comprehensions, generators. See [functions](functions.md).
 
 ### Procedural
@@ -64,8 +62,8 @@ Sequences of instructions with functions, loops and conditionals – the simples
 | Package managers, linters, formatters      | [tooling.md](tooling.md)                                                                 |
 | ORMs and migrations                        | [orm-and-migrations.md](orm-and-migrations.md)                                           |
 | Frameworks (Django, FastAPI, Flask)        | [frameworks/](frameworks/README.md)                                                      |
-| Exceptions (generic)                       | [../../fundamentals/exception-handling.md](../../fundamentals/exception-handling.md)     |
-| Mocking/patching                           | [../../fundamentals/mocking-and-patching.md](../../fundamentals/mocking-and-patching.md) |
+| Exceptions (generic)                       | [Exception handling](../../fundamentals/exception-handling.md)                           |
+| Mocking/patching                           | [Mocking, patching, monkey patching](../../fundamentals/mocking-and-patching.md)         |
 
 ## Additional resources
 
@@ -77,5 +75,6 @@ Sequences of instructions with functions, loops and conditionals – the simples
 - [Python Tips book](https://book.pythontips.com/) (older, Python-2-era examples)
 - [Python GIL – Real Python](https://realpython.com/python-gil/)
 
-> **TODO:** design patterns in Python (see [`examples/python/design_patterns`](../../../examples/python/design_patterns/README.md)) and
-> a page on built-in data *types*.
+> **TODO:** design patterns in Python (see
+> [`examples/python/design_patterns`](../../../examples/python/design_patterns/README.md)) and a page on built-in data
+> *types*.

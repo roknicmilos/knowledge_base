@@ -23,8 +23,8 @@ ship?
 ## Cognitive bias
 
 A systematic, predictable error in human judgment. The one that matters most with AI is **automation bias**:
-over-trusting
-an automated system's output and not verifying it just because it came from the system ("trusting the GPS into a lake").
+over-trusting an automated system's output and not verifying it just because it came from the system ("trusting the GPS
+into a lake").
 
 - It is the human counterpart to a model's [hallucination](limitations.md#hallucination) and
   [sycophancy](limitations.md#sycophancy): the model can be confidently wrong, and automation bias stops a person from

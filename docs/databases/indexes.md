@@ -1,8 +1,7 @@
-# DB indexes
+# DB indexes and views
 
 Structures that speed up data retrieval on a table, like an index in a book – the DBMS can find rows without a **full
-table
-scan**. Conceptually a sorted list of the values of one or more columns plus a pointer to the row.
+table scan**. Conceptually a sorted list of the values of one or more columns plus a pointer to the row.
 
 - Typically implemented as B-trees (also hash, GIN/GiST, bitmap… depending on DB).
 - Built on one or more columns of a **single** table (or a materialized/indexed view) – not across tables.
@@ -37,8 +36,7 @@ fragmentation below) – prefer time-ordered IDs (UUIDv7, ULID) or sequential in
 ## Index fragmentation
 
 Occurs when the logical order of index entries doesn't match their physical order on disk – caused by random inserts
-(random
-UUID keys), frequent updates and deletes. Queries then do extra work. To keep performance:
+(random UUID keys), frequent updates and deletes. Queries then do extra work. To keep performance:
 
 - detect fragmentation with the DB's tools,
 - rebuild/reorganize fragmented indexes,

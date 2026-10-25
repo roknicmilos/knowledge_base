@@ -19,5 +19,4 @@ apps where a structured, all-in-one framework pays off.
 > **Verify:** Angular versions move fast – `*ngIf/*ngFor` were replaced by built-in control flow (v17; structural
 > directives deprecated in v20) and zoneless change detection/signals are becoming the default. React's own docs now
 > recommend starting with a framework (Next.js, React Router) – Create React App is deprecated. Vue, Svelte and Solid
-> are
-> not covered here.
+> are not covered here.

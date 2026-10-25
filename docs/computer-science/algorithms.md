@@ -3,8 +3,8 @@
 An algorithm is a step-by-step procedure or set of rules to solve a specific problem or perform a computation – a recipe
 for code: input → steps → output.
 
-- Algorithms define *how efficiently* a problem can be solved: same problem, different algorithms → very different
-  speed or memory use.
+- Algorithms define *how efficiently* a problem can be solved: same problem, different algorithms → very different speed
+  or memory use.
 - Every function, sorting, searching or route-finding relies on algorithms.
 
 ## Common types
@@ -17,7 +17,7 @@ for code: input → steps → output.
 
 ## Connection to data structures
 
-Algorithms operate on data structures (BFS/DFS → graphs/trees; binary search → sorted arrays).
-Data structures are the containers, algorithms are the instructions to manipulate them.
+Algorithms operate on data structures (BFS/DFS → graphs/trees; binary search → sorted arrays). Data structures are the
+containers, algorithms are the instructions to manipulate them.
 
 See [data structures](data-structures.md) and [Big O](big-o.md).

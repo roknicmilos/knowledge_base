@@ -42,5 +42,4 @@ flowchart LR
 ```
 
 Tools: GitHub Actions, GitLab CI, Jenkins, Cloud Build, AWS CodePipeline. Commit convention that helps release
-automation:
-[Conventional Commits](../tools/git-commit-messages.md).
+automation: [Conventional Commits](../tools/git-commit-messages.md).

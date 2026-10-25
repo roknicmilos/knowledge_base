@@ -1,20 +1,17 @@
 # Terraform
 
 An **Infrastructure as Code (IaC)** tool by HashiCorp for defining, provisioning and managing cloud and on-premises
-resources in
-a declarative language (HCL). Docs: <https://developer.hashicorp.com/terraform>
+resources in a declarative language (HCL). Docs: <https://developer.hashicorp.com/terraform>
 
 > **Verify (licensing):** since 2023 Terraform uses the Business Source License; **OpenTofu** (Linux Foundation,
-> MPL-2.0) is the
-> open-source fork with a compatible workflow. HashiCorp is now part of IBM.
+> MPL-2.0) is the open-source fork with a compatible workflow. HashiCorp is now part of IBM.
 
 ## Key features
 
 - **Multi-cloud** – AWS, Azure, GCP, Kubernetes and thousands of providers.
 - **Declarative** – describe what you want; Terraform works out how.
 - **State management** – tracks real infrastructure to detect and apply changes safely (use a remote backend with
-  locking for
-  teams).
+  locking for teams).
 - **Dependency graph** – handles ordering automatically (VPC before subnet).
 - **Modules** – reusable, write once.
 - **Plan & apply** – preview changes before executing.
@@ -57,8 +54,7 @@ Other commands: `terraform fmt` (format), `terraform validate` (syntax + interna
 ## Use cases
 
 Cloud provisioning (EC2, Azure VMs, GKE) · Kubernetes management · multi-tier apps (networks, VMs, load balancers, DBs
-together) ·
-disposable dev/test environments · GitOps and CI/CD (GitHub Actions, Jenkins, GitLab CI).
+together) · disposable dev/test environments · GitOps and CI/CD (GitHub Actions, Jenkins, GitLab CI).
 
 ## Why use it
 

@@ -5,13 +5,11 @@ about to run, the session starts, Claude finishes responding. They make behavior
 the linter after every edit) instead of hoping the model remembers.
 
 **Gotcha:** a hook fires on *every* matching event, including ones you didn't have in mind. Scope the matcher as
-narrowly
-as the policy requires.
+narrowly as the policy requires.
 
-Working example: [
-`practical/hooks_example`](https://github.com/roknicmilos/learn_claude_code/tree/main/practical/hooks_example) in the
-practice repo (Python scripts wired into
-that repo's `.claude/settings.json`).
+Working example:
+[`practical/hooks_example`](https://github.com/roknicmilos/learn_claude_code/tree/main/practical/hooks_example) in the
+practice repo (Python scripts wired into that repo's `.claude/settings.json`).
 
 ## Protocol
 
@@ -30,8 +28,8 @@ through its **exit code** and/or JSON on **stdout**:
     - `systemMessage` – a note appended to the system prompt
 
 Each event can declare a **matcher** (tool name, notification type, ...) and, for `PreToolUse`/`PostToolUse`, an `if`
-filter in permission-rule syntax (e.g. `"Bash(rm *)"`). `/hooks` lists what is registered;
-`"disableAllHooks": true` in `settings.json` turns them all off.
+filter in permission-rule syntax (e.g. `"Bash(rm *)"`). `/hooks` lists what is registered; `"disableAllHooks": true` in
+`settings.json` turns them all off.
 
 ## Wiring (settings.json)
 
@@ -70,8 +68,8 @@ if STATE_CHANGING.search(command):
 sys.exit(0)
 ```
 
-It enforces, at harness level, the "no unsolicited git" rule from
-[`CLAUDE.md`](memory-and-rules.md): a hook is guaranteed, a memory instruction is only followed.
+It enforces, at harness level, the "no unsolicited git" rule from [`CLAUDE.md`](memory-and-rules.md): a hook is
+guaranteed, a memory instruction is only followed.
 
 ## Practical hooks in the example
 
@@ -99,9 +97,8 @@ It enforces, at harness level, the "no unsolicited git" rule from
 `TaskCreated`, `TaskCompleted`, `TeammateIdle`, `InstructionsLoaded`, `CwdChanged`, `DirectoryAdded`, `WorktreeRemove`,
 `PostCompact`, `PreModelSwitch`, `PostModelSwitch`, `Elicitation`, `ElicitationResult` are all wired to one generic
 `log_event.py`, run `async`, that appends the full payload to `logs/events.jsonl` so you can see what each event
-delivers.
-`WorktreeCreate` is intentionally left unwired: a hook on it can take over worktree creation, so a plain logger could
-interfere.
+delivers. `WorktreeCreate` is intentionally left unwired: a hook on it can take over worktree creation, so a plain
+logger could interfere.
 
 > **Verify:** the event list grows between Claude Code versions.
 
@@ -111,9 +108,9 @@ All of the above use `"type": "command"`. Others:
 
 - **`prompt`** – sends the input to a cheap model (default Haiku) and acts on `{"ok": true/false, "reason": ...}`.
 - **`agent`** – like `prompt` but runs a full agentic loop with tools (e.g. "run the tests and confirm they pass"); slow
-  and costly per trigger.
-  `{ "type": "agent", "prompt": "Run the test suite and confirm it passes. $ARGUMENTS", "timeout": 120 }`
-- **`http`** – POSTs the payload to a URL and acts on the response.
-  `{ "type": "http", "url": "http://localhost:8080/hooks/pre-tool-use", "timeout": 30 }`
-- **`mcp_tool`** – calls a tool on a registered [MCP server](mcp-example.md).
-  `{ "type": "mcp_tool", "server": "mcp-tasks-server", "tool": "create-task", "input": {...} }`
+  and costly per trigger. `{ "type": "agent", "prompt": "Run the test suite and confirm it passes. $ARGUMENTS",
+  "timeout": 120 }`
+- **`http`** – POSTs the payload to a URL and acts on the response. `{ "type": "http", "url":
+  "http://localhost:8080/hooks/pre-tool-use", "timeout": 30 }`
+- **`mcp_tool`** – calls a tool on a registered [MCP server](mcp-example.md). `{ "type": "mcp_tool", "server":
+  "mcp-tasks-server", "tool": "create-task", "input": {...} }`

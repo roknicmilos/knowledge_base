@@ -2,8 +2,8 @@
 
 ## SQL logical execution order
 
-`FROM` / `JOIN` → `WHERE` → `GROUP BY` → `HAVING` → `SELECT` → `DISTINCT` → `ORDER BY` → `LIMIT/OFFSET`
-(which is why a `SELECT` alias can't be used in `WHERE`). Video: <https://www.youtube.com/watch?v=BHwzDmr6d7s>
+`FROM` / `JOIN` → `WHERE` → `GROUP BY` → `HAVING` → `SELECT` → `DISTINCT` → `ORDER BY` → `LIMIT/OFFSET` (which is why a
+`SELECT` alias can't be used in `WHERE`). Video: <https://www.youtube.com/watch?v=BHwzDmr6d7s>
 
 ## Finding why a query with multiple JOINs is slow
 
@@ -15,19 +15,16 @@
     - hash/merge joins (usually good for large sets),
     - sorts (expensive on large sets),
     - the most expensive nodes (highest cost / actual time) and big gaps between estimated and actual rows (stale
-      statistics →
-      run `ANALYZE`).
+      statistics → run `ANALYZE`).
 3. **Check indexes** – columns in `JOIN`, `WHERE`, `ORDER BY`/`GROUP BY` indexed *and actually used* in the plan; don't
    over-index.
 4. **Analyze data distribution** – table sizes, skewed values.
 5. **Optimize JOINs** – join on indexed columns, right join type (`INNER` vs `LEFT`), remove unnecessary joins and
-   accidental
-   Cartesian products.
+   accidental Cartesian products.
 6. **Reduce rows early** – selective filters; (modern optimizers usually push predicates down themselves, so verify in
    the plan).
 7. **Check subqueries** – correlated subqueries executed per row (e.g. in the `SELECT` list) are slow; rewrite as joins
-   or
-   window functions when the plan shows it helps.
+   or window functions when the plan shows it helps.
 8. **Profile** – find slow queries system-wide.
 
 | DB         | Tools                                                                                                                    |
@@ -49,14 +46,13 @@ Video on `EXPLAIN` in Postgres: <https://www.youtube.com/watch?v=P7EUFtjeAmI>
 
 ## N+1 problem
 
-Common with ORMs. 1 query fetches N parent rows, then **N more queries** fetch each parent's children
-(`SELECT * FROM users` → `SELECT * FROM orders WHERE user_id = ?` per user) → 1 + N round-trips.
+Common with ORMs. 1 query fetches N parent rows, then **N more queries** fetch each parent's children (`SELECT * FROM
+users` → `SELECT * FROM orders WHERE user_id = ?` per user) → 1 + N round-trips.
 
 Solutions:
 
 - **Eager loading / JOIN** – fetch parents and children in one query. Careful: JOINing a to-many relation repeats the
-  parent
-  columns per child row.
+  parent columns per child row.
   ```sql
   SELECT users.*, orders.*
   FROM users

@@ -1,8 +1,7 @@
 # Context managers
 
 Manage resources so they're always acquired and released – even when an error occurs. Typical for files, DB connections
-and
-locks.
+and locks.
 
 ## Concepts
 

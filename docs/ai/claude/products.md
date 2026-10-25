@@ -19,8 +19,7 @@ A quick map of the lineup so tool-specific terms elsewhere have somewhere to poi
 - **Claude API tool-use loop:** you get *no* built-in tools, you define every tool yourself.
 - **Agent SDK:** the full Claude Code harness (tool loop, context management, permissions, built-ins such as
   Read/Write/Edit, Bash, Glob/Grep, WebSearch/WebFetch, MCP, subagents, hooks) embedded in your Python/TypeScript app
-  via
-  `query(prompt, options)`. You host and deploy it yourself.
+  via `query(prompt, options)`. You host and deploy it yourself.
 - **Managed Agents:** Anthropic hosts both the loop *and* the execution sandbox.
 
 The SDK sits in between: full built-in harness, self-hosted deployment.

@@ -45,8 +45,8 @@ static pages).
 
 ### Option 2 – check client-side via an API call
 
-Store no tokens in JS; call an endpoint such as `/api/me` that reads the cookie server-side and returns
-`{ isAuthenticated, user, roles }`.
+Store no tokens in JS; call an endpoint such as `/api/me` that reads the cookie server-side and returns `{
+isAuthenticated, user, roles }`.
 
 ```js
 useEffect(() => {
@@ -54,8 +54,8 @@ useEffect(() => {
 }, [])
 ```
 
-The cookie is sent because the request is same-origin (use `credentials: 'include'` cross-origin).
-✅ No tokens in browser storage, easy with React state. ⚠️ Small delay before auth state is known.
+The cookie is sent because the request is same-origin (use `credentials: 'include'` cross-origin). ✅ No tokens in
+browser storage, easy with React state. ⚠️ Small delay before auth state is known.
 
 ### Option 3 – middleware for route protection
 

@@ -28,7 +28,8 @@ Flags / types:
 - **First-party / third-party** – set by the visited site vs another domain (tracking, ads).
 - **Secure** – only sent over HTTPS.
 - **HttpOnly** – not readable from JavaScript (mitigates token theft via XSS); still sent with requests.
-- **SameSite** (`Strict`/`Lax`/`None`) – restricts cross-site sending; helps against CSRF. Browsers default to `Lax`.
+- **SameSite** (`Strict`/`Lax`/`None`) – restricts cross-site sending; helps against CSRF. Chrome and Edge default to
+  `Lax` when the attribute is missing; other browsers differ, so set it explicitly.
 
 > **Verify:** third-party cookies. Safari and Firefox block them by default. Chrome announced a phase-out, then in
 > 2024–2025 changed course and kept them (with user controls) and wound down the Privacy Sandbox APIs. Check current

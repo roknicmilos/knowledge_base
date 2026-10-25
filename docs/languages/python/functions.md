@@ -3,8 +3,7 @@
 ## Functions are first-class objects
 
 Everything in Python is an object, including functions. They can be assigned to variables, passed as arguments, returned
-from
-other functions and stored in data structures. This enables decorators, higher-order functions and dynamic function
+from other functions and stored in data structures. This enables decorators, higher-order functions and dynamic function
 generation, and suits functional programming patterns.
 
 ## Lambda functions
@@ -47,8 +46,7 @@ A decorator can take a **class** and return a modified (or new) class – possib
 ## `yield` and generators
 
 `yield` creates a **generator**: an iterable that produces values lazily, one at a time, instead of building everything
-in
-memory.
+in memory.
 
 - A function containing `yield` is a generator function; calling it returns a generator object without running the body.
 - `yield` **pauses** the function and saves its state; the next iteration resumes there (unlike `return`, which ends
@@ -78,14 +76,14 @@ print(list(yield_example()))   # [1, 2]
 ```
 
 **Use cases:** processing large files/datasets without loading them whole, infinite sequences, streaming data.
-**Advantages:** memory efficiency, simpler code than hand-written iterators, values computed on demand.
-See [iterators](iterators.md).
+**Advantages:** memory efficiency, simpler code than hand-written iterators, values computed on demand. See
+[iterators](iterators.md).
 
 ## Comprehensions
 
-Concise constructs for creating collections by transforming/filtering others:
-list comprehension, dict comprehension, set comprehension and generator expressions.
-Advantages: conciseness, readability, often faster than the equivalent loop.
+Concise constructs for creating collections by transforming/filtering others: list comprehension, dict comprehension,
+set comprehension and generator expressions. Advantages: conciseness, readability, often faster than the equivalent
+loop.
 
 ```python
 squares = [n * n for n in range(10) if n % 2 == 0]

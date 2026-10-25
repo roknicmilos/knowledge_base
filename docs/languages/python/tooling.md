@@ -14,8 +14,7 @@
 Choosing:
 
 1. **New general project → `uv`** ([docs](https://docs.astral.sh/uv/)): extremely fast package and project manager
-   written in
-   Rust by Astral (the Ruff authors); manages venvs, lockfiles, scripts and Python versions.
+   written in Rust by Astral (the Ruff authors); manages venvs, lockfiles, scripts and Python versions.
 2. Poetry – mature alternative with good community support.
 3. Data science / non-Python dependencies → Conda (or Pixi).
 4. Simplicity → `pip` + `venv`.
@@ -32,8 +31,7 @@ Choosing:
 | Focus    | Fast installs, dependency resolution, Node integration | Virtual environments, resolution, cross-platform compat. |
 
 JavaScript installs into a project-local `node_modules`, so it doesn't need a virtual environment; Python installs into
-an
-environment – use one per project.
+an environment – use one per project.
 
 ## Linters, formatters, type checkers
 

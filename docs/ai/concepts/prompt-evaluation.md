@@ -23,7 +23,7 @@ the API for CI-style regression testing.
 
 - A prompt that looks better on a handful of tries can regress on cases outside that sample. Evals catch this because
   they check a fixed set every time; they don't replace manual review entirely.
-- LLM-as-judge is a cheaper substitute for human grading, not an infallible one: periodically spot-check its
-  calibration with human graders.
+- LLM-as-judge is a cheaper substitute for human grading, not an infallible one: periodically spot-check its calibration
+  with human graders.
 
 Related: [Prompt engineering](prompt-engineering.md), [Sampling and determinism](sampling-and-determinism.md).

@@ -15,8 +15,7 @@
 
 - **CAP theorem** applies to any distributed data store: during a network partition you must choose consistency or
   availability. NoSQL systems are often tuned towards availability (eventual consistency), but it isn't a property of
-  "NoSQL"
-  as such; many let you choose per operation.
+  "NoSQL" as such; many let you choose per operation.
 - The old rule "SQL = vertical, NoSQL = horizontal" is only a tendency today.
 - Performance is workload dependent – SQL engines are very fast at joins and aggregations; NoSQL shines at simple access
   patterns by key at massive scale.

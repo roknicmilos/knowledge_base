@@ -1,8 +1,7 @@
 # MCP server example: a tasks API as tools
 
 A practice project showing the [Model Context Protocol](../../concepts/tool-use-and-mcp.md#mcp--model-context-protocol):
-a small MCP server that
-wraps a REST API and exposes it as tools Claude Code can call. Source:
+a small MCP server that wraps a REST API and exposes it as tools Claude Code can call. Source:
 [`practical/mcp_example`](https://github.com/roknicmilos/learn_claude_code/tree/main/practical/mcp_example).
 
 ```
@@ -69,9 +68,8 @@ MCP servers can also expose **prompts**: user-invoked templates (vs tools, which
 exposes `task-status-report` (optional `audience` argument).
 
 Claude Code discovers MCP prompts but, as noted in the example, has no documented way to invoke them as slash commands
-(upstream issue closed as not planned). Try them with the
-[MCP Inspector](https://github.com/modelcontextprotocol/inspector)
-(`npx @modelcontextprotocol/inspector node build/index.js`,
-"Prompts" tab); in Claude Code prefer a skill or project slash command for this kind of template.
+(upstream issue closed as not planned). Try them with the [MCP
+Inspector](https://github.com/modelcontextprotocol/inspector) (`npx @modelcontextprotocol/inspector node
+build/index.js`, "Prompts" tab); in Claude Code prefer a skill or project slash command for this kind of template.
 
 > **Verify:** the MCP prompts limitation reflects the state when the example was written.

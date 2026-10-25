@@ -31,6 +31,5 @@ is **not secret** and is stored next to the hash.
 
 A **secret** value shared by the application, stored *outside* the database (secrets manager, HSM, environment) and
 combined with the password (typically via HMAC or by encrypting the hash). If only the database leaks, the attacker
-can't
-even start cracking. It complements the salt, doesn't replace it, and it has to be long and random – a one-letter pepper
-(52 guesses) would be trivial to brute-force. Rotating a pepper is operationally hard; weigh that.
+can't even start cracking. It complements the salt, doesn't replace it, and it has to be long and random – a one-letter
+pepper (52 guesses) would be trivial to brute-force. Rotating a pepper is operationally hard; weigh that.

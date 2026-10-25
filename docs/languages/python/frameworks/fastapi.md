@@ -2,10 +2,9 @@
 
 ## General
 
-- Built on [Starlette](https://www.starlette.io/) (lightweight ASGI web framework)
-  and [Pydantic](https://docs.pydantic.dev/)
-  (the most widely used data-validation library). Relies heavily on Python type hints for validation, serialization and
-  documentation.
+- Built on [Starlette](https://www.starlette.io/) (lightweight ASGI web framework) and
+  [Pydantic](https://docs.pydantic.dev/) (the most widely used data-validation library). Relies heavily on Python type
+  hints for validation, serialization and documentation.
 - Supports concurrency with `async`/`await`; you can define both async and sync routes.
 - Generates OpenAPI docs automatically for your routes: `/docs` (Swagger UI) and `/redoc`.
 - Runs on any [ASGI](https://asgi.readthedocs.io/) server (Uvicorn, Hypercorn).
@@ -72,8 +71,7 @@ async def perfect_ping():
 ## Middlewares
 
 Code that runs before and/or after every request/response – logging, auth, error handling, CORS, custom headers. Based
-on
-Starlette's middleware ("wrap-around").
+on Starlette's middleware ("wrap-around").
 
 ```python
 from fastapi import FastAPI, Request
@@ -94,20 +92,18 @@ app.add_middleware(SimpleMiddleware)
 ```
 
 - Implement a class inheriting `BaseHTTPMiddleware`, or a pure ASGI class with `__call__`, or use
-  `@app.middleware("http")`.
-  `BaseHTTPMiddleware` has known limitations (context variables, streaming, background tasks) – pure ASGI is preferred
-  for
-  library-grade middleware.
+  `@app.middleware("http")`. `BaseHTTPMiddleware` has known limitations (context variables, streaming, background tasks)
+  – pure ASGI is preferred for library-grade middleware.
 - Built-in: `CORSMiddleware`, `TrustedHostMiddleware`, `HTTPSRedirectMiddleware`, `GZipMiddleware`.
 - **Order:** the **last middleware added is the outermost** – it sees the request first and the response last. Requests
-  flow
-  through middlewares in *reverse* order of `add_middleware` calls; responses flow back in the order they were added.
+  flow through middlewares in *reverse* order of `add_middleware` calls; responses flow back in the order they were
+  added.
 - Avoid heavy logic in middleware (applies to every request); use dependencies for route-specific logic.
 
 ## Dependency injection
 
-Dependencies (DB connections, configuration, reusable logic) are provided to routes with `Depends`.
-General concept: [dependency injection](../../../fundamentals/dependency-injection.md).
+Dependencies (DB connections, configuration, reusable logic) are provided to routes with `Depends`. General concept:
+[dependency injection](../../../fundamentals/dependency-injection.md).
 
 ```python
 from typing import Annotated
@@ -126,14 +122,12 @@ def read_items(params: Annotated[dict, Depends(common_parameters)]):
 ```
 
 **Resolution order:** before the route, dependencies are evaluated (recursively for nested ones); the values are passed
-to the
-handler; generator dependencies (`yield`) run their cleanup afterwards.
+to the handler; generator dependencies (`yield`) run their cleanup afterwards.
 > **Verify:** exactly *when* `yield`-dependency cleanup runs relative to sending the response changed between FastAPI
 > versions – check the current docs.
 
 Advanced: class-based dependencies (e.g. query-param classes), `yield` for setup/teardown (DB sessions), nested
-dependencies,
-global dependencies via `FastAPI(dependencies=[...])` / `APIRouter(dependencies=[...])`.
+dependencies, global dependencies via `FastAPI(dependencies=[...])` / `APIRouter(dependencies=[...])`.
 
 Use cases: DB connections, authentication/authorization, shared validation, environment-specific configuration.
 Benefits: reusability, testability (override dependencies in tests), modularity, automatic validation.
@@ -165,7 +159,6 @@ FastAPI doesn't enforce an architecture. Common choices:
 | Layered                | Strict technical separation of concerns | Clear boundaries, testable                                                               | Boilerplate; layers depend heavily on each other; hard to isolate features |
 
 Considerations: **project size** (start simple, refactor as it grows), **team size** (bigger teams → modular/DDD to
-avoid
-conflicts), **future goals** (planning microservices → SOA/DDD early).
-See [monolith vs microservices](../../../architecture/monolith-vs-microservices.md) and
-[layered vs vertical](../../../architecture/layered-vs-vertical.md).
+avoid conflicts), **future goals** (planning microservices → SOA/DDD early). See [monolith vs
+microservices](../../../architecture/monolith-vs-microservices.md) and [layered vs
+vertical](../../../architecture/layered-vs-vertical.md).

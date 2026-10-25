@@ -19,8 +19,7 @@ Two fundamental communication patterns in distributed systems and microservices.
 needs strong consistency.
 
 **Use event-driven when** you want to decouple services and scale, the work is long-running/background, eventual
-consistency
-is acceptable (e.g. updating inventory after an order), or you handle high volumes of events.
+consistency is acceptable (e.g. updating inventory after an order), or you handle high volumes of events.
 
 **Hybrid:** request-response for real-time synchronous interactions, events for asynchronous decoupled workflows.
 

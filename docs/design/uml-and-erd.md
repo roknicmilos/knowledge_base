@@ -16,9 +16,8 @@ concepts. Common diagrams:
 
 ## ERD – Entity-Relationship Diagram
 
-A visual representation of entities and their relationships in a **database**. It is **not** part of UML (it predates
-it –
-Chen, 1976), though the two are often used together.
+A visual representation of entities and their relationships in a **database**. It is **not** part of UML (it predates it
+– Chen, 1976), though the two are often used together.
 
 ### Crow's foot notation
 
@@ -29,7 +28,7 @@ Each relationship line has two indicators:
 
 Most of the time people just say "cardinality".
 
-| Symbol meaning     |                      |
+| Meaning            | Symbol               |
 |--------------------|----------------------|
 | One                | single bar           |
 | Many               | crow's foot          |
@@ -59,8 +58,8 @@ ovals).
 
 ## References
 
-- [Lucidchart] [Class diagram tutorial](https://www.youtube.com/watch?v=UI6lqHOVHic),
-  [ERD tutorial I](https://www.youtube.com/watch?v=QpdhBUYk7Kk), [ERD tutorial II](https://www.youtube.com/watch?v=-CuY5ADwn24)
+- Lucidchart: [Class diagram tutorial](https://www.youtube.com/watch?v=UI6lqHOVHic), [ERD tutorial
+  I](https://www.youtube.com/watch?v=QpdhBUYk7Kk), [ERD tutorial II](https://www.youtube.com/watch?v=-CuY5ADwn24)
 - [Crow's foot notation in ERDs](https://www.gleek.io/blog/crows-foot-notation.html)
 - [Online ER diagram tool (Chen and crow's foot)](https://www.gleek.io/er-diagrams.html)
 - [Difference between UML and ERD](https://pediaa.com/what-is-the-difference-between-uml-and-erd/)

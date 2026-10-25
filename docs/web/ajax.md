@@ -1,7 +1,7 @@
 # AJAX
 
-**A**synchronous **J**avaScript **a**nd **X**ML – a technique that lets a page talk to the server in the background
-and update only part of the page, without a full reload.
+**A**synchronous **J**avaScript **a**nd **X**ML – a technique that lets a page talk to the server in the background and
+update only part of the page, without a full reload.
 
 ## Problem it solves
 

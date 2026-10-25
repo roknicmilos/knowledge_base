@@ -1,7 +1,7 @@
 # Iterators and iterables
 
-Iterators power and control the iteration process; iterables typically hold the data you iterate over.
-Source: [Iterators and Iterables in Python (Real Python)](https://realpython.com/python-iterators-iterables/).
+Iterators power and control the iteration process; iterables typically hold the data you iterate over. Source:
+[Iterators and Iterables in Python (Real Python)](https://realpython.com/python-iterators-iterables/).
 
 ## Iterables
 
@@ -24,8 +24,8 @@ Objects that return data from a stream/container one item at a time and keep tra
 - Iterators can: yield items from existing data, transform items, or generate new data from computation.
 - **Infinite iterators** (never raise `StopIteration`) run forever in a `for` loop and make `sum()`, `max()`, `min()`
   hang.
-- **Generator iterators** – generator functions/expressions give the same thing with far less code
-  (see [functions](functions.md#yield-and-generators)).
+- **Generator iterators** – generator functions/expressions give the same thing with far less code (see
+  [functions](functions.md#yield-and-generators)).
 
 ### Async iterators
 
@@ -50,14 +50,12 @@ Objects that return data from a stream/container one item at a time and keep tra
 | Optimize memory use            | ✅        | ❌        |
 
 All iterators are iterables (they implement `__iter__`), but not all iterables are iterators (only those with
-`__next__`).
-Lists/tuples/dicts/sets/strings are iterables, **not** iterators.
+`__next__`). Lists/tuples/dicts/sets/strings are iterables, **not** iterators.
 
 ## Memory efficiency
 
 Iterators and generators keep one item in memory at a time and compute the next on demand. They decouple iteration from
 processing, so you can chain stages into memory-efficient pipelines, and they are the only way to process infinite
-streams.
-For custom container classes implement the iterable protocol so they work in `for` loops.
+streams. For custom container classes implement the iterable protocol so they work in `for` loops.
 
 Examples: [`examples/python/iterations`](../../../examples/python/iterations/README.md).

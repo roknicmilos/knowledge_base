@@ -66,5 +66,5 @@ goes through it; subagents don't talk to each other.
 
 ## Building a workflow in Claude Code
 
-There is no single "workflow" feature. Pick the primitive that matches the trigger: see
-[Workflow primitives](../claude/claude-code/workflow-primitives.md).
+There is no single "workflow" feature. Pick the primitive that matches the trigger: see [Workflow
+primitives](../claude/claude-code/workflow-primitives.md).

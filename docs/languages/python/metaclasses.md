@@ -1,8 +1,7 @@
 # Metaclasses
 
 A metaclass is the **"class of a class"**: classes create instances, metaclasses create classes. They let you control
-class
-creation and behavior – powerful, advanced, and rarely needed in everyday code.
+class creation and behavior – powerful, advanced, and rarely needed in everyday code.
 
 ## Key concepts
 

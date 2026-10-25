@@ -19,7 +19,7 @@ you mean). Related notations: Ω (lower bound), Θ (tight bound).
 | O(2^N)     | Exponential | Naive recursive Fibonacci, subset enumeration                                                                                        |
 | O(N!)      | Factorial   | Generating all permutations, brute-force travelling salesman                                                                         |
 
-Also O (N³), O (N^N)… – "as bad as N² is, there's (almost) no upper limit to how horrible your code can get."
+Also O(N³), O(N^N)… – "as bad as N² is, there's (almost) no upper limit to how horrible your code can get."
 
 ## Determining Big O
 
@@ -28,9 +28,9 @@ Also O (N³), O (N^N)… – "as bad as N² is, there's (almost) no upper limit 
 3. Count the steps in a typical run – how does the step count grow with N?
 4. Keep the most significant term, drop lower-order terms and coefficients.
 
-Example (from the repo): a loop that scans half the list on average with ~4 steps per iteration costs `2N + 1` → **O (
-N)**;
-calling that linear function once per element of a list makes it `N² + kN + 1` → **O (N²)**.
+Example (from the [examples](../../examples/python/bigO)): a loop that scans half the list on average with ~4 steps per
+iteration costs `2N + 1` → **O(N)**; calling that linear function once per element of a list makes it `N² + kN + 1` →
+**O(N²)**.
 
 ```python
 def find_mom(child):

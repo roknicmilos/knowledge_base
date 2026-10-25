@@ -22,15 +22,14 @@ model and harness, just narrower: cold context, sometimes a restricted tool allo
   prompts still reach you, governed by the active permission mode.
 - It reports back on the normal completion path, not as a hard guarantee.
 
-Multi-agent orchestration
-theory: [coordinator pattern](../../concepts/agents-and-workflows.md#coordinator-hub-and-spoke).
+Multi-agent orchestration theory: [coordinator
+pattern](../../concepts/agents-and-workflows.md#coordinator-hub-and-spoke).
 
 ## Forked session (`context: fork`)
 
 A `context: fork` field in the YAML frontmatter of a `SKILL.md` or slash command runs it in an isolated, subagent-like
 context instead of inline. Each invocation starts clean and only the finished result returns to the main conversation,
-not
-the intermediate reasoning or tool output.
+not the intermediate reasoning or tool output.
 
 - Use for skills/commands with concrete actionable steps (a deploy skill) whose execution noise you don't want to keep.
 - Same trade-off as a subagent: lean main context, but nothing is inherited beyond what the skill tells it.

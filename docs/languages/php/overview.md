@@ -1,14 +1,12 @@
-# PHP
+# PHP overview
 
 - **Interpreted** language: source is compiled to bytecode at runtime (cached by OPcache) – not a true ahead-of-time
-  compiled
-  language.
+  compiled language.
 - **Dynamically typed** – types are determined at runtime from values.
 - **Weakly typed** – PHP converts types automatically when needed.
 - **Multi-paradigm:** procedural; OOP (classes, objects, visibility, static methods, traits); functional style
-  (first-class
-  functions, closures, arrow functions, higher-order functions like `array_map`/`array_filter` – limited but present);
-  imperative.
+  (first-class functions, closures, arrow functions, higher-order functions like `array_map`/`array_filter` – limited
+  but present); imperative.
 
 > **Verify/TODO:** modern PHP 8.x features (enums, readonly properties, attributes, union types, match, JIT) are not
 > covered yet.
@@ -41,14 +39,12 @@ if ($x > 0) {
 
 - Type declarations are optional (as with Python hints); with different types passed PHP uses **implicit casting**.
 - `declare(strict_types=1);` at the top of a file makes PHP throw `TypeError` on mismatched types – but only for
-  function-call
-  parameter/return checks in that file.
+  function-call parameter/return checks in that file.
 
 ### Performance
 
 Both are fast enough for most web workloads; PHP 7+ is very fast for request/response cycles and PHP 8 adds a JIT.
-Differences
-rarely decide the choice.
+Differences rarely decide the choice.
 
 ### Summary
 

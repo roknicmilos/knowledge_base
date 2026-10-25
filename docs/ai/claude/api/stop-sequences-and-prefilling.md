@@ -15,8 +15,7 @@ A list of strings (`stop_sequences: [...]`). If the model generates one, generat
 *not* included in the returned text. It is a hard exact-match cutoff, not a hint.
 
 Use it to stop at a boundary you control, e.g. a role-play at `"\nHuman:"` so the model doesn't write the other side, or
-a
-list generator at `"\n\n"` once one block is done.
+a list generator at `"\n\n"` once one block is done.
 
 - Matching is exact and case-sensitive; a paraphrase does nothing.
 - Check `response.stop_reason`: `"stop_sequence"` (a sequence fired; matched string in `response.stop_sequence`),
@@ -27,8 +26,7 @@ list generator at `"\n\n"` once one block is done.
 
 Historically you could seed the start of Claude's reply with a final `assistant` message (no `user` turn after it) and
 Claude continued from that text. It was used to force `{` for JSON, skip a "Sure, here's..." preamble, or lock a
-persona's
-first words.
+persona's first words.
 
 > **Verify:** removed on every current model: it returns HTTP 400 on Claude Opus 5, Sonnet 5, Fable 5, Fable 5.1 and the
 > Opus/Sonnet 4.6/4.7/4.8 family. Treat it in old code and tutorials as deprecated, not "old-fashioned but working". A

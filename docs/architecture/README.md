@@ -2,6 +2,7 @@
 
 Scaling, traffic management, architectural styles, communication patterns and integration.
 
+- [API and REST](rest-api.md)
 - [API Gateway](api-gateway.md)
 - [Caching and CDN](caching-and-cdn.md)
 - [Event-driven vs request-response](event-driven-vs-request-response.md)
@@ -9,5 +10,4 @@ Scaling, traffic management, architectural styles, communication patterns and in
 - [Layered (horizontal) vs vertical-slice design](layered-vs-vertical.md)
 - [Load balancer](load-balancer.md)
 - [Monolith vs modular monolith vs microservices](monolith-vs-microservices.md)
-- [API and REST](rest-api.md)
 - [Scaling systems](scaling.md)

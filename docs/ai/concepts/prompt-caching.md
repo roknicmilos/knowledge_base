@@ -1,8 +1,7 @@
 # Prompt caching
 
 Reusing a previously processed *prefix* of a prompt (long system prompt, big document, tool definitions) across calls,
-so
-the provider skips re-running [inference](training-and-inference.md#inference) over it. Cuts latency and cost for
+so the provider skips re-running [inference](training-and-inference.md#inference) over it. Cuts latency and cost for
 repeated or multi-turn calls that share the same leading content.
 
 Mark the stable part as cacheable and put the part that changes per call (the user question) after it. It matters most
@@ -23,13 +22,12 @@ for agents and chat apps that resend the whole history every turn.
 
 ## In Claude Code
 
-The harness caches its own system prompt and tool schemas automatically; you don't place markers yourself. The
-mechanics still explain behaviors such as `/compact` costing a cache miss on the next request (the summary rewrites the
-prefix) – see [Context management](../claude/claude-code/context-management.md).
+The harness caches its own system prompt and tool schemas automatically; you don't place markers yourself. The mechanics
+still explain behaviors such as `/compact` costing a cache miss on the next request (the summary rewrites the prefix) –
+see [Context management](../claude/claude-code/context-management.md).
 
 ## Gotchas
 
 - A small edit near the start of a long prompt (a timestamp, a reordered JSON key, a different tool list) invalidates
-  the
-  whole cache, not just the changed part. Keep the stable part first and stable.
+  the whole cache, not just the changed part. Keep the stable part first and stable.
 - It is a provider/API-level feature; whether and how it is exposed differs per product.

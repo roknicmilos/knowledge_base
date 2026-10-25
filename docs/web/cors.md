@@ -4,20 +4,18 @@ Cross-Origin Resource Sharing: a mechanism that lets a server declare which **ot
 read its responses from a browser. It is a controlled relaxation of the Same-Origin Policy (SOP).
 
 - **The browser enforces the rules** – CORS does not protect a server from curl, scripts or other non-browser clients.
-- Response headers:
-  `Access-Control-Allow-Origin`, `-Allow-Methods`, `-Allow-Headers`, `-Allow-Credentials`, `-Expose-Headers`,
-  `-Max-Age`.
+- Response headers: `Access-Control-Allow-Origin`, `-Allow-Methods`, `-Allow-Headers`, `-Allow-Credentials`,
+  `-Expose-Headers`, `-Max-Age`.
 - If the server sets no CORS headers, only same-origin access is allowed. That is why a frontend on `localhost:3000`
   calling a backend on `localhost:8000` gets a CORS error (different port = different origin).
-- For a **simple request** the server still responds with the data, but the browser refuses to expose it to the page
-  if the origin isn't allowed. For a **preflighted** request the real request is never sent if the preflight fails.
+- For a **simple request** the server still responds with the data, but the browser refuses to expose it to the page if
+  the origin isn't allowed. For a **preflighted** request the real request is never sent if the preflight fails.
 
 ## Preflight
 
 A request is *simple* only if it uses GET/HEAD/POST, no custom headers, and a `Content-Type` of
 `application/x-www-form-urlencoded`, `multipart/form-data` or `text/plain`. Anything else is preflighted: the browser
-first
-sends an automatic `OPTIONS` request and checks `Allow-Methods`/`Allow-Headers`. This includes:
+first sends an automatic `OPTIONS` request and checks `Allow-Methods`/`Allow-Headers`. This includes:
 
 - PUT, PATCH, DELETE,
 - **POST with `Content-Type: application/json`**,
@@ -35,7 +33,8 @@ sends an automatic `OPTIONS` request and checks `Allow-Methods`/`Allow-Headers`.
     - client: `fetch(url, { credentials: 'include' })` (or `withCredentials = true` for XMLHttpRequest),
     - server: `Access-Control-Allow-Credentials: true` **and** an explicit `Access-Control-Allow-Origin` (not `*`;
       `Allow-Headers`/`Allow-Methods` can't be `*` either),
-    - cookie: `Secure` and, for cross- *site* use, `SameSite=None` (browsers default to `SameSite=Lax`).
+    - cookie: `Secure` and, for cross-*site* use, `SameSite=None` (Chrome and Edge default to `SameSite=Lax`; other
+      browsers differ).
 - Mark session cookies `HttpOnly` (not readable by JavaScript) and `Secure` (HTTPS only) to reduce XSS and
   man-in-the-middle risk.
 - A credentialed request that changes headers/methods/content type triggers a preflight too.

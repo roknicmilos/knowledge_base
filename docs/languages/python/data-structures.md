@@ -18,9 +18,9 @@
 | `collections.defaultdict`                      | Insertion                                        | Yes                        | No (keys)  | Dicts with default values                    |
 | `collections.Counter`                          | Insertion                                        | Yes                        | No (keys)  | Counting occurrences                         |
 
-Stack → use a `list` (`append`/`pop`). Queue → use `deque` (`list.pop(0)` is O (n)).
-Complexities: [Big O](../../computer-science/big-o.md#python-complexities-cheat-sheet).
-Only `tuple`, `str`, `frozenset`, `bytes`, numbers, `bool`, `None` and `range` are immutable built-ins.
+Stack → use a `list` (`append`/`pop`). Queue → use `deque` (`list.pop(0)` is O(n)). Complexities: [Big
+O](../../computer-science/big-o.md#python-complexities-cheat-sheet). Only `tuple`, `str`, `frozenset`, `bytes`, numbers,
+`bool`, `None` and `range` are immutable built-ins.
 
 ## Python vs JavaScript
 
@@ -34,5 +34,4 @@ Only `tuple`, `str`, `frozenset`, `bytes`, numbers, `bool`, `None` and `range` a
 | Key-value store   | `dict`, `defaultdict`, `OrderedDict`                | `Map` – any key type                                 |
 
 Python is the common choice for data science, scripting and algorithms; JavaScript for web development and async
-programming.
-Java comparison: [java/overview.md](../java/overview.md#data-structures-java-vs-python).
+programming. Java comparison: [java/overview.md](../java/overview.md#data-structures-java-vs-python).

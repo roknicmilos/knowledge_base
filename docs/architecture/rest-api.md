@@ -3,11 +3,10 @@
 ## API
 
 **Application Programming Interface** – a software intermediary that lets two applications talk to each other; often
-described
-as a contract between an information provider and a consumer.
+described as a contract between an information provider and a consumer.
 
-*Waiter analogy:* the API takes your order (request) to the kitchen and brings the food (response) back.
-Architecture is usually explained as client (sends the request) and server (sends the response).
+*Waiter analogy:* the API takes your order (request) to the kitchen and brings the food (response) back. Architecture is
+usually explained as client (sends the request) and server (sends the response).
 
 ## REST
 

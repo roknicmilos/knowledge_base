@@ -14,9 +14,7 @@ Two ways to organize code. (Not to be confused with horizontal/vertical *scaling
 
 **Use layered when:** small/medium app, technical separation matters more than business alignment, reusable components,
 simple business logic. **Use vertical slices when:** large complex apps with well-defined domains, feature-oriented
-delivery, microservices (each
-service is a vertical containing all the layers it needs).
+delivery, microservices (each service is a vertical containing all the layers it needs).
 
 **In practice combine them:** horizontal layers for common technical concerns (authentication, logging) and vertical
-slices
-for business features (user management, product catalog).
+slices for business features (user management, product catalog).

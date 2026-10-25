@@ -1,17 +1,15 @@
-# Java
+# Java overview
 
 High-level, object-oriented, platform-independent language and platform, first released by Sun Microsystems in 1995 (now
 Oracle). Used for enterprise applications, web servers and big-data systems; Android supports Java, but Kotlin is
-Google's
-preferred language there.
+Google's preferred language there.
 
 ## How Java works
 
 1. Write code → save as `.java` (e.g. `HelloWorld.java`).
 2. Compile → `javac HelloWorld.java` → `.class` bytecode.
 3. Run → `java HelloWorld` – the JVM executes the bytecode. (Since Java 11 you can also run a single source file
-   directly:
-   `java HelloWorld.java`.)
+   directly: `java HelloWorld.java`.)
 
 ## Java vs other languages
 
@@ -51,4 +49,5 @@ Key insights:
 - Choose Python for quick prototyping/scripting/mixed data; Java for large systems, performance-critical or strictly
   typed code.
 
-Related: [data structures](../../computer-science/data-structures.md), [Python data structures](../python/data-structures.md).
+Related: [data structures](../../computer-science/data-structures.md), [Python data
+structures](../python/data-structures.md).

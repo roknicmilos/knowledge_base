@@ -16,16 +16,14 @@
 - **Modular monolith:** growing complexity; better maintainability without microservice overhead; possible future
   migration to microservices.
 - **Microservices:** large complex systems, multiple teams, independent scaling, and the infrastructure + expertise to
-  run
-  distributed systems.
+  run distributed systems.
 
 ## Monolith
 
 - Single, tightly coupled codebase (UI, business logic, data access) deployed as one unit; typically one database.
 - **Pros:** simple to develop, test, deploy and debug; no network overhead between components.
 - **Cons:** can't scale/deploy parts independently; coupling makes maintenance harder as it grows; slower development as
-  the
-  team grows.
+  the team grows.
 - Example: basic e-commerce site with one codebase for frontend, backend and database.
 
 ## Modular monolith
@@ -64,12 +62,10 @@ services.
 
 - **ESB:** enterprises with many legacy systems to integrate, complex orchestration/transformation.
 - **Microservices:** modern cloud-native apps needing scalability and rapid development; usually the better choice for
-  new
-  projects without legacy integration.
+  new projects without legacy integration.
 - They can coexist: use the ESB judiciously for legacy integration/orchestration while new functionality runs as
-  independent
-  services – a gradual modernization path. (SOA is the older ESB-centred style; see
-  [Python project architectures](../languages/python/frameworks/fastapi.md#project-architectures).)
+  independent services – a gradual modernization path. (SOA is the older ESB-centred style; see [Python project
+  architectures](../languages/python/frameworks/fastapi.md#project-architectures).)
 
-See
-also: [layered vs vertical slices](layered-vs-vertical.md), [event-driven vs request-response](event-driven-vs-request-response.md).
+See also: [layered vs vertical slices](layered-vs-vertical.md), [event-driven vs
+request-response](event-driven-vs-request-response.md).

@@ -1,8 +1,7 @@
 # AWS IAM
 
 Identity and Access Management: controls **who** (identity) can access **which** AWS resources and under **what
-conditions**.
-IAM is a **global** service.
+conditions**. IAM is a **global** service.
 
 ## Components
 
@@ -51,9 +50,8 @@ Read objects from an S3 bucket:
 
 1. **Least privilege** – grant only what is needed.
 2. **MFA** for everyone, especially the root account; don't use root for daily work.
-3. **Roles instead of long-lived access keys** for applications (EC2, Lambda, ECS tasks); use **IAM Identity Center (
-   SSO)** for
-   humans.
+3. **Roles instead of long-lived access keys** for applications (EC2, Lambda, ECS tasks); use **IAM Identity Center
+   (SSO)** for humans.
 4. **Rotate credentials** that must exist.
 5. **Audit and monitor** with CloudTrail.
 

@@ -1,14 +1,13 @@
 # Django
 
 High-level, open-source Python web framework for building web apps quickly. Follows **MVT** (Model-View-Template), a
-variation
-of [MVC](../../../design/mvc-and-mvvm.md); emphasizes reusability, modularity and DRY ("Don't Repeat Yourself").
+variation of [MVC](../../../design/mvc-and-mvvm.md); emphasizes reusability, modularity and DRY ("Don't Repeat
+Yourself").
 
 ## Architecture
 
 Primarily a **monolith** – models, views, templates are one codebase deployed as one unit. Depending on how you
-structure the
-project it can also be a modular monolith, or be adapted to a microservices architecture.
+structure the project it can also be a modular monolith, or be adapted to a microservices architecture.
 
 ## Django ORM
 
@@ -18,8 +17,7 @@ Lets you work with databases via Python instead of raw SQL.
 
 - **Productivity** – abstracts SQL, less boilerplate.
 - **Database agnostic** – PostgreSQL, MySQL, SQLite, Oracle with little code change (mostly the `DATABASES` setting;
-  DB-specific
-  features and raw SQL reduce portability).
+  DB-specific features and raw SQL reduce portability).
 - **Automatic schema migrations** (`makemigrations`/`migrate`).
 - **Security** – parameterized queries prevent SQL injection.
 - **Readable, maintainable** model-centric code.
@@ -40,9 +38,8 @@ Lets you work with databases via Python instead of raw SQL.
 - Not ideal where extreme performance/fine-tuned DB access is needed (raw SQL or SQLAlchemy).
 
 **Use when:** standard web apps of moderate complexity, rapid development and maintainability, multiple/switchable
-databases,
-Django's migrations/admin/auth. **Avoid when:** highly complex DB-specific queries, extreme performance optimization,
-NoSQL.
+databases, Django's migrations/admin/auth. **Avoid when:** highly complex DB-specific queries, extreme performance
+optimization, NoSQL.
 
 ## N+1 problem in the Django ORM
 
@@ -103,21 +100,17 @@ General explanation: [N+1 problem](../../../databases/query-performance.md#n1-pr
 Django protects against [CSRF](../../../security/csrf.md) via middleware and a template tag.
 
 - **`django.middleware.csrf.CsrfViewMiddleware`** is enabled by default in `MIDDLEWARE`: it adds a CSRF token to
-  responses and
-  validates it on unsafe requests; missing/invalid token → `403 Forbidden`.
+  responses and validates it on unsafe requests; missing/invalid token → `403 Forbidden`.
 - **Forms:** every POST form needs `{% csrf_token %}`, which renders a hidden input with the token.
 - **Validation:** the browser sends the token with the form data; Django compares it with the secret stored client-side
-  in the
-  `csrftoken` **cookie** (default) or, when `CSRF_USE_SESSIONS = True`, in the user's session.
+  in the `csrftoken` **cookie** (default) or, when `CSRF_USE_SESSIONS = True`, in the user's session.
 - **AJAX:** read the token from the `csrftoken` cookie and send it in the `X-CSRFToken` header.
 
 Settings:
 
 - `CSRF_USE_SESSIONS` – store the secret in the session instead of a cookie (default `False` → cookie).
-- `CSRF_COOKIE_NAME` (default `csrftoken`), `CSRF_COOKIE_AGE` (default 31449600 s = 1 year),
-  `CSRF_COOKIE_SECURE` (HTTPS only), `CSRF_COOKIE_HTTPONLY` (hide from JavaScript – then the token must be read from the
-  DOM
-  instead of the cookie), `CSRF_COOKIE_SAMESITE`.
+- `CSRF_COOKIE_NAME` (default `csrftoken`), `CSRF_COOKIE_AGE` (default 31449600 s = 1 year), `CSRF_COOKIE_SECURE` (HTTPS
+  only), `CSRF_COOKIE_HTTPONLY` (hide from JavaScript – then the token must be read from the DOM instead of the cookie),
+  `CSRF_COOKIE_SAMESITE`.
 - `CSRF_TRUSTED_ORIGINS` – origins (with scheme, e.g. `https://app.example.com`) allowed for cross-origin POSTs (needed
-  behind
-  proxies/separate frontends).
+  behind proxies/separate frontends).

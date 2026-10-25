@@ -36,5 +36,4 @@ The Conventional Commits spec itself only defines `feat` and `fix`; the other ty
 ## Non-standard types seen in the wild (use only if your team agrees)
 
 `security`, `deps` (usually written `build(deps): …`), `config`, `init`, `release`, `hotfix` (a branch concept – use
-`fix`),
-`wip` (don't merge WIP commits into shared branches).
+`fix`), `wip` (don't merge WIP commits into shared branches).

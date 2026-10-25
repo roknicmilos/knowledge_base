@@ -9,15 +9,13 @@ auto-compact buffer are Claude Code-specific; the cost, caching and degradation 
 - Every request re-sends the **entire** history; there is no server-side memory between calls. A bigger context in use
   means more billed tokens on every later request.
 - [Prompt caching](../../concepts/prompt-caching.md) softens this but doesn't remove it: cached tokens are discounted,
-  not
-  free. A session at 50% of a large window still pays for about that much on every turn.
+  not free. A session at 50% of a large window still pays for about that much on every turn.
 - 10 prompts from a 50%-full context cost noticeably more than 10 from a 7%-full one, even with caching.
 
 ## When auto-compact triggers
 
 Not at a fixed absolute size. It is a reserved buffer near the **top** of the window: compaction triggers when free
-space
-shrinks to that buffer, around 96–97% used. Sitting at 50–80% is still well before auto-compact.
+space shrinks to that buffer, around 96–97% used. Sitting at 50–80% is still well before auto-compact.
 
 > **Verify:** the threshold is an implementation detail and may change.
 
@@ -34,13 +32,12 @@ task.
 ## `/clear`: the clearer win
 
 Between **unrelated** tasks it is close to free: no summarization (it just drops history), and little cache value is
-lost
-because the next task wouldn't reuse the old context anyway.
+lost because the next task wouldn't reuse the old context anyway.
 
 ## Degraded quality as context grows
 
-Independent of cost, a large context can degrade answers before the limit
-([attention dilution](../../limitations.md#attention-dilution), "needle in a haystack"):
+Independent of cost, a large context can degrade answers before the limit ([attention
+dilution](../../limitations.md#attention-dilution), "needle in a haystack"):
 
 - This is a reason to clear/compact on its own: a long multi-topic history can hurt quality while well within limits.
 - There is **no fixed percentage** where it starts. It depends on *relevance density*, not raw size: one continuous,

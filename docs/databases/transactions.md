@@ -1,4 +1,4 @@
-# DB transactions and ACID
+# DB transactions, ACID and referential integrity
 
 A transaction is a series of operations executed as a **single unit** – ensuring integrity and consistency.
 
@@ -12,15 +12,14 @@ COMMIT;   -- or ROLLBACK; to undo both updates
 ```
 
 With a `CHECK (balance >= 0)` constraint on `accounts`, an overdraft makes the first `UPDATE` fail, the transaction is
-aborted
-and nothing is changed. When a read decides a write (check-then-update), lock the row: `SELECT … FOR UPDATE`.
+aborted and nothing is changed. When a read decides a write (check-then-update), lock the row: `SELECT … FOR UPDATE`.
 
 ## ACID
 
 - **Atomicity** – all operations succeed, or none do.
 - **Consistency** – the DB goes from one valid state to another; all constraints/triggers hold before and after,
-  otherwise
-  the transaction is aborted and nothing changes. Supported by atomicity, isolation, constraints/triggers, rollback.
+  otherwise the transaction is aborted and nothing changes. Supported by atomicity, isolation, constraints/triggers,
+  rollback.
 - **Isolation** – concurrent transactions don't interfere with each other (to the degree set by the isolation level).
 - **Durability** – committed changes are permanent, even after a crash.
 
@@ -41,14 +40,15 @@ and nothing is changed. When a read decides a write (check-then-update), lock th
 |------------------|-------------|--------------|----------------------|-----------|----------------------------------------------------------------------------------|
 | Read Uncommitted | may occur   | may occur    | may occur            | may occur | Rarely used; non-critical reads                                                  |
 | Read Committed   | prevented   | may occur    | may occur            | may occur | Default in PostgreSQL, Oracle, SQL Server                                        |
-| Repeatable Read  | prevented   | prevented    | prevented            | may occur | Default in MySQL/InnoDB; consistent reads within a transaction                   |
+| Repeatable Read  | prevented   | DB-specific¹ | prevented            | may occur | Default in MySQL/InnoDB; consistent reads within a transaction                   |
 | Serializable     | prevented   | prevented    | prevented            | prevented | As if transactions ran one after another; absolute integrity, lowest concurrency |
 
+¹ PostgreSQL aborts the conflicting transaction; MySQL/InnoDB can still lose an update on read-then-write, so use
+`SELECT … FOR UPDATE` or atomic updates.
+
 Higher level = more isolation but more overhead and less concurrency. Databases implement levels differently
-(PostgreSQL:
-Read Uncommitted behaves like Read Committed; its Repeatable Read is snapshot isolation and also prevents phantoms; most
-use
-MVCC) – check your DB's documentation.
+(PostgreSQL: Read Uncommitted behaves like Read Committed; its Repeatable Read is snapshot isolation and also prevents
+phantoms; most use MVCC) – check your DB's documentation.
 
 ## Durability: write-ahead logging
 

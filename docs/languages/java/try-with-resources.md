@@ -1,8 +1,7 @@
 # Try-with-resources and AutoCloseable (Java)
 
 **Try-with-resources** (Java 7) automatically closes resources (files, DB connections, sockets) when the `try` block
-exits –
-successfully or with an exception. It removes the need for manual `finally` cleanup.
+exits – successfully or with an exception. It removes the need for manual `finally` cleanup.
 
 Requirement: the resource implements `AutoCloseable` (or its sub-interface `Closeable`).
 
@@ -29,8 +28,7 @@ try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
 ```
 
 **Advantages:** no manual `finally`, guaranteed cleanup, multiple resources in one `try (A a = …; B b = …)`; since Java
-9 an
-effectively-final variable can be used directly: `try (br)`.
+9 an effectively-final variable can be used directly: `try (br)`.
 
 ## AutoCloseable
 
@@ -40,8 +38,8 @@ public interface AutoCloseable {
 }
 ```
 
-Introduced in Java 7 for automatic resource management – the counterpart of
-Python's [context managers](../python/context-managers.md).
+Introduced in Java 7 for automatic resource management – the counterpart of Python's [context
+managers](../python/context-managers.md).
 
 | Feature           | Description                                                                         |
 |-------------------|-------------------------------------------------------------------------------------|
@@ -51,8 +49,7 @@ Python's [context managers](../python/context-managers.md).
 
 - Resources are closed in **reverse order** of declaration.
 - Exceptions from `close()` are suppressed but accessible via `getSuppressed()`; if both the body and `close()` throw,
-  the body's
-  exception propagates.
+  the body's exception propagates.
 - Custom classes can implement `AutoCloseable` to behave like Python context managers.
 
 ## Java try-with-resources vs Python `with`

@@ -18,8 +18,8 @@ TypeScript, PHP type declarations) sits in the middle – see [Python type hints
 
 ## Strong vs weak (are implicit conversions allowed?)
 
-- **Strong:** operations on incompatible types raise an error unless you convert explicitly.
-  Python: `"5" + 10` → `TypeError`.
+- **Strong:** operations on incompatible types raise an error unless you convert explicitly. Python: `"5" + 10` →
+  `TypeError`.
 - **Weak:** the runtime converts silently. JavaScript: `"5" + 10 === "510"`; PHP converts types when needed (unless
   `declare(strict_types=1)` is used for function signatures).
 

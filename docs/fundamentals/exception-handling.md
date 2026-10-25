@@ -5,10 +5,10 @@ Languages use `try/catch/finally` (C#, Java, JS, PHP) or `try/except/else/finall
 - Put code that may raise inside `try`; handle general or specific exceptions in `catch`/`except`.
 - Several handlers can follow; put **specific** exception types first and general ones last.
 - A `catch` block is optional **if** a `finally` block is present (`try-finally`).
-- `finally` runs whether or not an exception occurred – use it for cleanup (closing files/connections).
-  Prefer language constructs that do this for you: Python [`with`](../languages/python/context-managers.md), Java
-  [try-with-resources](../languages/java/try-with-resources.md), C# [
-  `using`/IDisposable](../languages/csharp/idisposable.md).
+- `finally` runs whether or not an exception occurred – use it for cleanup (closing files/connections). Prefer language
+  constructs that do this for you: Python [`with`](../languages/python/context-managers.md), Java
+  [try-with-resources](../languages/java/try-with-resources.md), C#
+  [`using`/IDisposable](../languages/csharp/idisposable.md).
 - Python only: `else` runs when the `try` block raised nothing.
 - Variations: `try-catch-finally`, `try-catch` (no cleanup needed), `try-finally` (cleanup only).
 

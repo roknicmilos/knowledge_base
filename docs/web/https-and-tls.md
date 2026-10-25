@@ -3,8 +3,8 @@
 HTTPS is HTTP over **TLS** (Transport Layer Security). It provides confidentiality, integrity and server authentication.
 Same methods and status codes as HTTP, default port **443**.
 
-> SSL (Secure Sockets Layer) is the deprecated predecessor. Only TLS 1.2 and 1.3 should be enabled; "SSL certificate"
-> is just a legacy name for a TLS certificate.
+> SSL (Secure Sockets Layer) is the deprecated predecessor. Only TLS 1.2 and 1.3 should be enabled; "SSL certificate" is
+> just a legacy name for a TLS certificate.
 
 - HTTPS is essential for anything sensitive (banking, shopping, logins) and is expected by browsers and search engines.
 - **Certificates:** the server needs a certificate issued by a Certificate Authority (CA). It binds the domain to the
@@ -17,5 +17,4 @@ Same methods and status codes as HTTP, default port **443**.
 - **Why both kinds of crypto:** asymmetric crypto (key exchange, signatures) establishes trust and a shared secret;
   symmetric crypto (AES, ChaCha20) is much faster for the bulk data. Ephemeral keys give **forward secrecy**: recording
   traffic and later stealing the server key does not decrypt old sessions. (Older TLS versions could also use RSA key
-  transport – the client encrypts a secret with the server's public key – this
-  was removed in TLS 1.3.)
+  transport – the client encrypts a secret with the server's public key – this was removed in TLS 1.3.)

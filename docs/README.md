@@ -1,7 +1,7 @@
 # Knowledge Base
 
-Personal notes on software engineering, migrated from Google Docs (export reviewed 2026-10-25).
-Corrections from the review are already applied; time-sensitive facts are marked `> **Verify:**`.
+Personal notes on software engineering, migrated from Google Docs (export reviewed 2026-10-25). Corrections from the
+review are already applied; time-sensitive facts are marked `> **Verify:**`.
 
 ## Structure
 

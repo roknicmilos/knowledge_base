@@ -64,9 +64,8 @@ def make_sound(animal: Animal):
 make_sound(Dog())
 ```
 
-✔ no inheritance needed ✔ works with type checkers (mypy, pyright) ✖ only checked statically –
-unless you decorate the protocol with `@runtime_checkable` to allow `isinstance()` checks (which only verify method
-presence).
+✔ no inheritance needed ✔ works with type checkers (mypy, pyright) ✖ only checked statically – unless you decorate the
+protocol with `@runtime_checkable` to allow `isinstance()` checks (which only verify method presence).
 
 ## When to use what
 

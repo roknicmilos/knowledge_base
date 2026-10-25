@@ -3,11 +3,9 @@
 ## IDisposable
 
 - An interface in .NET for releasing **unmanaged resources** (file handles, DB connections, sockets, native memory) –
-  and for
-  deterministically releasing managed ones that hold them (e.g. `DbContext`).
+  and for deterministically releasing managed ones that hold them (e.g. `DbContext`).
 - *Deterministic* = cleanup happens at a known, controlled time (when you call `Dispose()` / leave the `using` scope),
-  as
-  opposed to the garbage collector, which runs non-deterministically.
+  as opposed to the garbage collector, which runs non-deterministically.
 - Managed memory is reclaimed by the GC; unmanaged resources need explicit cleanup.
 - Defines a single method: `void Dispose();`
 - Use the `using` statement (or C# 8 `using var x = …;` declaration) so `Dispose` is always called:
@@ -15,11 +13,10 @@
   using (var resource = new ResourceHolder()) { /* ... */ }
   ```
 - Related: `IAsyncDisposable` / `await using` for async cleanup; the full dispose pattern with finalizers/`SafeHandle`
-  when a
-  class directly owns unmanaged handles.
+  when a class directly owns unmanaged handles.
 
-Equivalents: Java [try-with-resources](../java/try-with-resources.md),
-Python [context managers](../python/context-managers.md).
+Equivalents: Java [try-with-resources](../java/try-with-resources.md), Python [context
+managers](../python/context-managers.md).
 
 ## Encapsulation in C#
 

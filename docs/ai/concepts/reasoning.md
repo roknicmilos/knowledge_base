@@ -15,16 +15,14 @@ step before answering" works with any model.
 ## Reasoning
 
 Explicit step-by-step work (chain-of-thought) before answering. Improves math, logic and multi-step tasks. Turn it on
-for
-real chains of logic (math, debugging, planning); skip it for lookups and formatting, where it only adds latency and
+for real chains of logic (math, debugging, planning); skip it for lookups and formatting, where it only adds latency and
 cost.
 
 ## Extended thinking (Claude)
 
 Claude's productized reasoning mode: the model produces a "thinking" block, then the answer. Chain-of-thought made
-native
-and controllable instead of a prompting trick. Available in the API and Claude apps; whether it is on by default, and
-whether it can be turned off, differs per model.
+native and controllable instead of a prompting trick. Available in the API and Claude apps; whether it is on by default,
+and whether it can be turned off, differs per model.
 
 - A visible thinking block is not guaranteed to be the raw chain of thought; products may summarize or omit it.
 - *Legacy:* on older models using `budget_tokens`, flagged reasoning came back as an encrypted `redacted_thinking` block

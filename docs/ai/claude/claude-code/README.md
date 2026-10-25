@@ -1,8 +1,7 @@
 # Claude Code
 
 Claude Code is Anthropic's agentic CLI/IDE tool for software engineering (see [products](../products.md)). Its
-customization
-features and how to combine them.
+customization features and how to combine them.
 
 ## Customizing the agent
 

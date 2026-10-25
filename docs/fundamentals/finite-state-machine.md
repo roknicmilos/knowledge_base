@@ -11,9 +11,9 @@ Model predictable, rule-based behavior when:
 - the next action depends on the current state,
 - you want something easy to reason about, test and maintain.
 
-FSMs prevent "spaghetti" conditions by enforcing explicit transitions and make behavior deterministic.
-Typical uses: authentication/checkout/onboarding flows, devices (a door: Open → Closing → Closed), UI navigation,
-protocols and parsers.
+FSMs prevent "spaghetti" conditions by enforcing explicit transitions and make behavior deterministic. Typical uses:
+authentication/checkout/onboarding flows, devices (a door: Open → Closing → Closed), UI navigation, protocols and
+parsers.
 
 ## Components
 

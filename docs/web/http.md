@@ -14,8 +14,7 @@ JSON, plain text, media files and assets such as JS/CSS. HTTP is **stateless**.
 - The destination is an IP address + port (80 by default for HTTP, 443 for HTTPS).
 - **Transport:** HTTP/1.1 and HTTP/2 run over **TCP**; HTTP/3 runs over **QUIC, which uses UDP**.
 - **Versions:** HTTP/3 is standardized (RFC 9114) and widely supported by browsers and CDNs; HTTP/1.1 and HTTP/2 are
-  still
-  very common.
+  still very common.
 
 ## Methods
 

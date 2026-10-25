@@ -5,10 +5,8 @@ How a text model gets to act on the world and fetch fresh data.
 ## Tool use
 
 Also called *function calling*. The model is given a menu of functions (search, run code, hit an API) and decides when
-to
-call them and with which arguments. The model never executes anything itself: it outputs a *request* (name +
-arguments), the surrounding program runs it and feeds the result back (see
-[agent loop](agents-and-workflows.md#agent)).
+to call them and with which arguments. The model never executes anything itself: it outputs a *request* (name +
+arguments), the surrounding program runs it and feeds the result back (see [agent loop](agents-and-workflows.md#agent)).
 
 Write each tool with a tight, unambiguous description and schema: the model chooses *whether* and *which* tool from the
 description alone, so a vague one ("does stuff with data") gets picked wrong or skipped.
@@ -25,8 +23,7 @@ The `tool_choice` request parameter controls whether and which tool the model ma
 | `none` | No tool calls this turn, even if tools are defined       |
 
 Defining a tool makes it available; `tool_choice` decides how free the model is to use it on this call. Force a tool in
-a
-pipeline stage that must always produce structured output ([structured output](structured-output.md)); keep `auto` for
+a pipeline stage that must always produce structured output ([structured output](structured-output.md)); keep `auto` for
 open-ended conversational steps.
 
 Since every API request is independent, your own code can send a different `tool_choice` per request (e.g. force
@@ -52,7 +49,7 @@ server**, any MCP-aware client can use it (a USB-C port for AI).
 - Tool use ≠ MCP: tool use is the *capability* (the model calls functions); MCP is a *standard* for exposing and wiring
   them. You can do tool use with hand-wired functions; MCP makes the wiring reusable across clients.
 - MCP is not how every capability arrives. In Claude Code, file and shell operations (Bash, Read, Write, Edit) are
-  native
-  [built-in tools](../claude/claude-code/built-in-tools.md); MCP *adds* extras (browser automation, integrations).
+  native [built-in tools](../claude/claude-code/built-in-tools.md); MCP *adds* extras (browser automation,
+  integrations).
 
 Hands-on example: [MCP server example](../claude/claude-code/mcp-example.md).

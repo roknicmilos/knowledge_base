@@ -19,10 +19,8 @@ Quick throwaway scripts; early prototyping while types change constantly.
 Type hints are **not enforced at runtime** – a separate static checker validates them.
 
 - **mypy** – the reference static type checker. Checks annotations without running the code; by default it skips
-  functions
-  that have no annotations (use `--check-untyped-defs` / `--strict` to be stricter).
+  functions that have no annotations (use `--check-untyped-defs` / `--strict` to be stricter).
 - **Pyright** (Pylance in VS Code) – fast checker with incremental checks and strong type inference.
 - **ty** (Astral) and **Pyrefly** (Meta) – newer Rust-based checkers. *Verify their maturity before adopting.*
 - **Ruff** is a **linter/formatter, not a type checker**. It can *require* annotations (the `ANN` rules) but doesn't
-  verify
-  types – see [tooling](tooling.md).
+  verify types – see [tooling](tooling.md).

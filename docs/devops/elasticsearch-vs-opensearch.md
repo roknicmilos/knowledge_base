@@ -1,8 +1,7 @@
-# OpenSearch vs Elasticsearch
+# Elasticsearch vs OpenSearch
 
 Both are Lucene-based search and analytics engines. OpenSearch was forked from Elasticsearch 7.10.2 in 2021 after
-Elastic moved
-away from Apache 2.0.
+Elastic moved away from Apache 2.0.
 
 ## At a glance
 
@@ -24,7 +23,5 @@ away from Apache 2.0.
 ## Choosing
 
 **Elasticsearch** if you need its advanced (partly proprietary) features, already use the Elastic stack, or accept
-SSPL/Elastic
-License/AGPL terms. **OpenSearch** if you prioritize Apache-2.0 open source, want to avoid vendor lock-in, use AWS or
-want free security/alerting,
-or are migrating from Elasticsearch 7.x.
+SSPL/Elastic License/AGPL terms. **OpenSearch** if you prioritize Apache-2.0 open source, want to avoid vendor lock-in,
+use AWS or want free security/alerting, or are migrating from Elasticsearch 7.x.

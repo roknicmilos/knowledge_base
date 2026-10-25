@@ -9,8 +9,8 @@ Anthropic Agent Skills. The model loads it **on demand** when a task matches the
 context lean. Use it for repeatable know-how ("how we build a feature", "how to format our reports").
 
 **Gotcha:** matching happens against the *description alone*, before the skill content is in context. A vague
-description
-means the skill is never loaded. Write it like a search query someone would type for this exact task, not a summary.
+description means the skill is never loaded. Write it like a search query someone would type for this exact task, not a
+summary.
 
 ```markdown
 ---
@@ -27,8 +27,7 @@ Example from the practice repo:
 ## Commands
 
 Saved, named prompts triggered with `/name` (markdown files, often in `.claude/commands`), optionally with arguments.
-They
-turn a repeated instruction into a one-word invocation, e.g. `/feature:plan`.
+They turn a repeated instruction into a one-word invocation, e.g. `/feature:plan`.
 
 ## Skill vs command
 
@@ -41,6 +40,5 @@ reuses it for you).
 ## Skill vs subagent
 
 A skill adds *knowledge/procedure* to the current worker; a [subagent](subagents.md) adds a *separate worker* with its
-own
-context. Use a skill to standardize *how* something is done, a subagent to offload a chunk of work. They combine: a
+own context. Use a skill to standardize *how* something is done, a subagent to offload a chunk of work. They combine: a
 subagent can use skills.

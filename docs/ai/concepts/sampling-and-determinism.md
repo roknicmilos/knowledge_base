@@ -14,8 +14,8 @@ focused and repeatable; high = varied and creative.
 
 - Many API defaults sit around 1.0, which is often too high for factual/code work – override it explicitly.
 - Only applies when calling the API yourself. claude.ai and Claude Code expose no temperature control.
-- **Temperature 0 is not fully deterministic**: batching and floating-point non-associativity on the provider's
-  hardware still cause small run-to-run variation.
+- **Temperature 0 is not fully deterministic**: batching and floating-point non-associativity on the provider's hardware
+  still cause small run-to-run variation.
 
 > **Verify:** on current Claude models with adaptive thinking on by default, the API rejects an explicit `temperature`
 > (HTTP 400). Check the model's docs before relying on it.
@@ -26,9 +26,8 @@ Sample only from the smallest set of tokens whose probabilities add up to `p` (e
 `p` = safer, narrower choices.
 
 **Temperature vs top-p:** temperature reshapes the whole distribution (flatter vs peakier); top-p truncates it. Tune
-one,
-not both, otherwise you can't tell which one moved the result. Temperature for overall "creativity", top-p to cut off
-the unlikely tail.
+one, not both, otherwise you can't tell which one moved the result. Temperature for overall "creativity", top-p to cut
+off the unlikely tail.
 
 ## Deterministic vs probabilistic
 
