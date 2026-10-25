@@ -10,11 +10,11 @@ average rubric score) you can compare across prompt versions.
 
 From cheapest/strictest to most flexible:
 
-| Grader                           | How it scores                                             | Pros                                   | Cons                                           |
-|----------------------------------|-----------------------------------------------------------|----------------------------------------|------------------------------------------------|
-| Code-based                       | Exact/fuzzy match, regex, JSON-schema check, unit test    | Fast, cheap, perfectly consistent      | Only when correctness is mechanically checkable |
-| Model-based (LLM-as-judge)       | Another LLM call scores against a rubric/reference answer | Handles subjective, open-ended criteria | Costs tokens; inherits the judge's blind spots |
-| Human                            | A person applies a rubric or picks A vs B                 | Highest-quality signal                 | Slow, expensive, doesn't scale                 |
+| Grader                     | How it scores                                             | Pros                                    | Cons                                            |
+|----------------------------|-----------------------------------------------------------|-----------------------------------------|-------------------------------------------------|
+| Code-based                 | Exact/fuzzy match, regex, JSON-schema check, unit test    | Fast, cheap, perfectly consistent       | Only when correctness is mechanically checkable |
+| Model-based (LLM-as-judge) | Another LLM call scores against a rubric/reference answer | Handles subjective, open-ended criteria | Costs tokens; inherits the judge's blind spots  |
+| Human                      | A person applies a rubric or picks A vs B                 | Highest-quality signal                  | Slow, expensive, doesn't scale                  |
 
 Anthropic's Console has a built-in Evaluation tool; teams also write custom scripts that loop over a dataset and call
 the API for CI-style regression testing.

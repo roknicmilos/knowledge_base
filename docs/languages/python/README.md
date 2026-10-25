@@ -63,7 +63,7 @@ Sequences of instructions with functions, loops and conditionals – the simples
 | Concurrency, parallelism, GIL              | [concurrency.md](concurrency.md)                                                         |
 | Package managers, linters, formatters      | [tooling.md](tooling.md)                                                                 |
 | ORMs and migrations                        | [orm-and-migrations.md](orm-and-migrations.md)                                           |
-| Frameworks (Django, FastAPI, Flask)        | [frameworks/](frameworks/README.md)                                                  |
+| Frameworks (Django, FastAPI, Flask)        | [frameworks/](frameworks/README.md)                                                      |
 | Exceptions (generic)                       | [../../fundamentals/exception-handling.md](../../fundamentals/exception-handling.md)     |
 | Mocking/patching                           | [../../fundamentals/mocking-and-patching.md](../../fundamentals/mocking-and-patching.md) |
 

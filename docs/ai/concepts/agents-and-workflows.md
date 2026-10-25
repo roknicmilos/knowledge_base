@@ -29,11 +29,11 @@ route*). Use it when steps are known and repeatable and you want reliability ove
 
 ## Agent vs workflow
 
-|                | Workflow                            | Agent                                |
-|----------------|-------------------------------------|--------------------------------------|
-| Path           | Fixed, author-decided               | Decided at runtime                   |
-| Strength       | Reliability, predictability, cost   | Flexibility on open-ended tasks      |
-| Rule of thumb  | Use if you can enumerate the steps  | Use when you can't                   |
+|               | Workflow                           | Agent                           |
+|---------------|------------------------------------|---------------------------------|
+| Path          | Fixed, author-decided              | Decided at runtime              |
+| Strength      | Reliability, predictability, cost  | Flexibility on open-ended tasks |
+| Rule of thumb | Use if you can enumerate the steps | Use when you can't              |
 
 Reaching for an agent when a workflow would do costs reliability and money: an open-ended loop can take a different path
 every run.

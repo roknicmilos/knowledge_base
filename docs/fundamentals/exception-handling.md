@@ -27,7 +27,7 @@ Languages use `try/catch/finally` (C#, Java, JS, PHP) or `try/except/else/finall
 try:
     low_level()
 except OSError as ex:
-    raise DomainError("could not load config") from ex   # explicit cause → __cause__
+    raise DomainError("could not load config") from ex  # explicit cause → __cause__
 ```
 
 - `raise X from ex` – traceback says *"The above exception was the direct cause of the following exception"*.

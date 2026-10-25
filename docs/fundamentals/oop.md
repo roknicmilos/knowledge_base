@@ -50,14 +50,14 @@ methods. Achieved with access modifiers (C#, Java), properties (C#, Python), get
 ```python
 class Person:
     def __init__(self, name, age):
-        self.name = name             # public
-        self._age = age              # "protected" – convention only
-        self.__bank_account = 1000   # "private" – name-mangled to _Person__bank_account
+        self.name = name  # public
+        self._age = age  # "protected" – convention only
+        self.__bank_account = 1000  # "private" – name-mangled to _Person__bank_account
 
     def display_name(self):
         return self.name
 
-    def _display_age(self):          # protected by convention, still reachable from outside
+    def _display_age(self):  # protected by convention, still reachable from outside
         return self._age
 
     def __display_bank_account(self):  # name-mangled; obj.__display_bank_account() raises AttributeError
@@ -76,13 +76,16 @@ class Serbian:
     def say_hello(self):
         return "Ćeo"
 
+
 class Croatian:
     def say_hello(self):
         return "Bok"
 
+
 class Englishman:
     def say_hello(self):
         return "Hello"
+
 
 def introduce(person):
     # doesn't care about the concrete class, only that it has say_hello()

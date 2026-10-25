@@ -4,7 +4,8 @@ How a text model gets to act on the world and fetch fresh data.
 
 ## Tool use
 
-Also called *function calling*. The model is given a menu of functions (search, run code, hit an API) and decides when to
+Also called *function calling*. The model is given a menu of functions (search, run code, hit an API) and decides when
+to
 call them and with which arguments. The model never executes anything itself: it outputs a *request* (name +
 arguments), the surrounding program runs it and feeds the result back (see
 [agent loop](agents-and-workflows.md#agent)).
@@ -16,14 +17,15 @@ description alone, so a vague one ("does stuff with data") gets picked wrong or 
 
 The `tool_choice` request parameter controls whether and which tool the model may or must call on this request:
 
-| Value  | Meaning                                                   |
-|--------|-----------------------------------------------------------|
-| `auto` | Model decides whether to call a tool and which (default)  |
-| `any`  | Model must call *some* tool, picks which                  |
-| `tool` | Model must call one specific named tool                   |
-| `none` | No tool calls this turn, even if tools are defined        |
+| Value  | Meaning                                                  |
+|--------|----------------------------------------------------------|
+| `auto` | Model decides whether to call a tool and which (default) |
+| `any`  | Model must call *some* tool, picks which                 |
+| `tool` | Model must call one specific named tool                  |
+| `none` | No tool calls this turn, even if tools are defined       |
 
-Defining a tool makes it available; `tool_choice` decides how free the model is to use it on this call. Force a tool in a
+Defining a tool makes it available; `tool_choice` decides how free the model is to use it on this call. Force a tool in
+a
 pipeline stage that must always produce structured output ([structured output](structured-output.md)); keep `auto` for
 open-ended conversational steps.
 
@@ -49,7 +51,8 @@ server**, any MCP-aware client can use it (a USB-C port for AI).
   templates).
 - Tool use ≠ MCP: tool use is the *capability* (the model calls functions); MCP is a *standard* for exposing and wiring
   them. You can do tool use with hand-wired functions; MCP makes the wiring reusable across clients.
-- MCP is not how every capability arrives. In Claude Code, file and shell operations (Bash, Read, Write, Edit) are native
+- MCP is not how every capability arrives. In Claude Code, file and shell operations (Bash, Read, Write, Edit) are
+  native
   [built-in tools](../claude/claude-code/built-in-tools.md); MCP *adds* extras (browser automation, integrations).
 
 Hands-on example: [MCP server example](../claude/claude-code/mcp-example.md).

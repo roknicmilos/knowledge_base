@@ -10,7 +10,8 @@ production add a parser plus a retry/validation step.
 
 ## Schema-constrained extraction
 
-Shape the output with a [tool call](tool-use-and-mcp.md#tool-use) whose input schema is the JSON schema you want, or with
+Shape the output with a [tool call](tool-use-and-mcp.md#tool-use) whose input schema is the JSON schema you want, or
+with
 a dedicated structured-output parameter. This removes syntax errors (missing brackets, trailing commas, unquoted keys)
 by construction. Prefer it for anything a downstream system parses automatically.
 

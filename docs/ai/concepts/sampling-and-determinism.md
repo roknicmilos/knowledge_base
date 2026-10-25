@@ -7,10 +7,10 @@ How randomness enters an LLM's output, and what that means for building reliable
 A number (typically 0–1, sometimes up to 2) that rescales the next-token probabilities before the model picks one. Low =
 focused and repeatable; high = varied and creative.
 
-| Task                                     | Typical value |
-|------------------------------------------|---------------|
-| Summarizing, extracting structured data  | 0–0.2         |
-| Brainstorming names, ad-copy variants    | 0.8–1.0       |
+| Task                                    | Typical value |
+|-----------------------------------------|---------------|
+| Summarizing, extracting structured data | 0–0.2         |
+| Brainstorming names, ad-copy variants   | 0.8–1.0       |
 
 - Many API defaults sit around 1.0, which is often too high for factual/code work – override it explicitly.
 - Only applies when calling the API yourself. claude.ai and Claude Code expose no temperature control.
@@ -25,7 +25,8 @@ focused and repeatable; high = varied and creative.
 Sample only from the smallest set of tokens whose probabilities add up to `p` (e.g. 0.9); ignore the long tail. Lower
 `p` = safer, narrower choices.
 
-**Temperature vs top-p:** temperature reshapes the whole distribution (flatter vs peakier); top-p truncates it. Tune one,
+**Temperature vs top-p:** temperature reshapes the whole distribution (flatter vs peakier); top-p truncates it. Tune
+one,
 not both, otherwise you can't tell which one moved the result. Temperature for overall "creativity", top-p to cut off
 the unlikely tail.
 

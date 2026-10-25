@@ -14,7 +14,8 @@ worktree has its own checked-out files, so there are no file-state collisions.
 
 **Gotchas**
 
-- Worktrees share the same `.git` directory, so operations on shared git state can still interact (e.g. deleting a branch
+- Worktrees share the same `.git` directory, so operations on shared git state can still interact (e.g. deleting a
+  branch
   another worktree has checked out).
 - The isolation is at the filesystem level, not the history level: reconverging the work still needs the usual
   merge/rebase.

@@ -50,19 +50,22 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
+
 @router.get("/terrible-ping")
 async def terrible_ping():
-    time.sleep(10)            # blocking I/O in async route – the whole process is blocked
+    time.sleep(10)  # blocking I/O in async route – the whole process is blocked
     return {"pong": True}
+
 
 @router.get("/good-ping")
 def good_ping():
-    time.sleep(10)            # blocking, but runs in a worker thread – others keep working
+    time.sleep(10)  # blocking, but runs in a worker thread – others keep working
     return {"pong": True}
+
 
 @router.get("/perfect-ping")
 async def perfect_ping():
-    await asyncio.sleep(10)   # non-blocking
+    await asyncio.sleep(10)  # non-blocking
     return {"pong": True}
 ```
 
@@ -78,12 +81,14 @@ from starlette.middleware.base import BaseHTTPMiddleware
 
 app = FastAPI()
 
+
 class SimpleMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         print("Before request")
-        response = await call_next(request)   # next middleware or the route handler
+        response = await call_next(request)  # next middleware or the route handler
         print("After response")
         return response
+
 
 app.add_middleware(SimpleMiddleware)
 ```
@@ -110,8 +115,10 @@ from fastapi import Depends, FastAPI
 
 app = FastAPI()
 
+
 def common_parameters(q: str | None = None, limit: int = 10):
     return {"q": q, "limit": limit}
+
 
 @app.get("/items/")
 def read_items(params: Annotated[dict, Depends(common_parameters)]):

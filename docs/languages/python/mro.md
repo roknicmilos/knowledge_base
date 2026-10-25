@@ -18,14 +18,18 @@ inheritance.
 class A:
     def method(self): print("A")
 
+
 class B(A):
     def method(self): print("B")
+
 
 class C(A):
     def method(self): print("C")
 
+
 class D(B, C):
     pass
+
 
 print(D.mro())
 # [<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>]

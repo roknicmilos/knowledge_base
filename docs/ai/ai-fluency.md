@@ -7,12 +7,12 @@ The human-skills side of working with AI.
 Anthropic's framework for working effectively and responsibly with AI, built on four competencies. It is a human-skills
 framework, not a product feature.
 
-| Competency     | Meaning                                                                                                     |
-|----------------|-------------------------------------------------------------------------------------------------------------|
-| **Delegation** | Deciding what to hand to AI and what to keep, based on what the AI is actually good at                      |
-| **Description**| Communicating clearly: prompting, context, constraints ([prompt engineering](concepts/prompt-engineering.md))|
-| **Discernment**| Critically evaluating output: catching errors, [hallucinations](limitations.md#hallucination) and bias; trust vs verify |
-| **Diligence**  | Taking responsibility for outcomes: quality, ethical and legal considerations                               |
+| Competency      | Meaning                                                                                                                 |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------|
+| **Delegation**  | Deciding what to hand to AI and what to keep, based on what the AI is actually good at                                  |
+| **Description** | Communicating clearly: prompting, context, constraints ([prompt engineering](concepts/prompt-engineering.md))           |
+| **Discernment** | Critically evaluating output: catching errors, [hallucinations](limitations.md#hallucination) and bias; trust vs verify |
+| **Diligence**   | Taking responsibility for outcomes: quality, ethical and legal considerations                                           |
 
 They work together: efficient, effective, safe and ethical use, not optimizing one at the expense of the others.
 
@@ -22,7 +22,8 @@ ship?
 
 ## Cognitive bias
 
-A systematic, predictable error in human judgment. The one that matters most with AI is **automation bias**: over-trusting
+A systematic, predictable error in human judgment. The one that matters most with AI is **automation bias**:
+over-trusting
 an automated system's output and not verifying it just because it came from the system ("trusting the GPS into a lake").
 
 - It is the human counterpart to a model's [hallucination](limitations.md#hallucination) and

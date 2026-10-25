@@ -4,10 +4,13 @@ Scripts (or HTTP/MCP/prompt/agent calls) that Claude Code runs automatically whe
 about to run, the session starts, Claude finishes responding. They make behavior deterministic and guaranteed (e.g. run
 the linter after every edit) instead of hoping the model remembers.
 
-**Gotcha:** a hook fires on *every* matching event, including ones you didn't have in mind. Scope the matcher as narrowly
+**Gotcha:** a hook fires on *every* matching event, including ones you didn't have in mind. Scope the matcher as
+narrowly
 as the policy requires.
 
-Working example: [`practical/hooks_example`](https://github.com/roknicmilos/learn_claude_code/tree/main/practical/hooks_example) in the practice repo (Python scripts wired into
+Working example: [
+`practical/hooks_example`](https://github.com/roknicmilos/learn_claude_code/tree/main/practical/hooks_example) in the
+practice repo (Python scripts wired into
 that repo's `.claude/settings.json`).
 
 ## Protocol
@@ -20,11 +23,11 @@ through its **exit code** and/or JSON on **stdout**:
 - **Exit 2:** blocking error on events that support blocking (e.g. `PreToolUse`, `UserPromptSubmit`). The action is
   stopped and stderr is shown to Claude as the reason.
 - **JSON output** keys:
-  - `hookSpecificOutput.additionalContext` – inject extra text into Claude's context
-  - `hookSpecificOutput.permissionDecision` – `allow` / `deny` / `ask` for `PreToolUse`
-  - `hookSpecificOutput.decision.behavior` – `allow` for `PermissionRequest`, skipping the prompt
-  - `decision: "block"` + `reason` – `PostToolUse` and `Stop`, to send Claude back to fix something
-  - `systemMessage` – a note appended to the system prompt
+    - `hookSpecificOutput.additionalContext` – inject extra text into Claude's context
+    - `hookSpecificOutput.permissionDecision` – `allow` / `deny` / `ask` for `PreToolUse`
+    - `hookSpecificOutput.decision.behavior` – `allow` for `PermissionRequest`, skipping the prompt
+    - `decision: "block"` + `reason` – `PostToolUse` and `Stop`, to send Claude back to fix something
+    - `systemMessage` – a note appended to the system prompt
 
 Each event can declare a **matcher** (tool name, notification type, ...) and, for `PreToolUse`/`PostToolUse`, an `if`
 filter in permission-rule syntax (e.g. `"Bash(rm *)"`). `/hooks` lists what is registered;
@@ -72,30 +75,31 @@ It enforces, at harness level, the "no unsolicited git" rule from
 
 ## Practical hooks in the example
 
-| Event                | Matcher                       | Script                    | Behavior                                                                  |
-|----------------------|-------------------------------|---------------------------|---------------------------------------------------------------------------|
-| `SessionStart`       | all                           | `session_start_context`   | Injects current git branch and dirty-file count as context                |
-| `UserPromptSubmit`   | –                             | `block_secrets_in_prompt` | Blocks (exit 2) a prompt that looks like it contains an API key/secret    |
-| `PreToolUse`         | `Bash`                        | `bash_git_guard`          | Forces `ask` on state-changing git commands                               |
-| `PreToolUse`         | `Bash`, `if: Bash(rm *)`      | inline `prompt` hook      | Cheap model judges whether an `rm` looks safe                             |
-| `PreToolUse`         | `Edit\|Write`                | `protect_files`           | Denies edits to `.env*`, `package-lock.json`, `.venv/`                    |
-| `PermissionRequest`  | `Bash`                        | `allow_readonly_git`      | Auto-approves read-only git (`status`, `log`, `diff`, `show`, `branch`)  |
-| `PostToolUse`        | `Edit\|Write`                | `validate_edit`           | Compiles/parses just-written `.py`/`.json`/`.ipynb`; blocks with the error  |
-| `PostToolUseFailure` | –                             | `log_tool_failure`        | Logs failed tool calls to `logs/tool_failures.jsonl`                      |
-| `Notification`       | `permission_prompt\|idle_prompt` | `notify`              | Beeps when Claude waits for you                                           |
-| `Stop`               | –                             | `stop_no_em_dash`         | Reads the last assistant message, blocks if it breaks a style rule; guards on `stop_hook_active` to avoid looping |
-| `StopFailure`        | –                             | `stop_failure_log`        | Beeps and logs the API error type (`rate_limit`, `overloaded`, ...)       |
-| `PreCompact`         | –                             | `precompact_backup`       | Copies the transcript to `logs/transcripts/` before compaction           |
-| `SessionEnd`         | –                             | `session_end_summary`     | Appends a one-line session summary to `logs/sessions.jsonl`               |
-| `FileChanged`        | `.env`                        | `file_changed_env`        | Tells Claude a `.env` changed on disk, so it doesn't rely on a stale read |
-| `ConfigChange`       | `project_settings`            | `config_change_warn`      | Warns (`systemMessage`) and logs when `settings.json` changes mid-session |
+| Event                | Matcher                          | Script                    | Behavior                                                                                                          |
+|----------------------|----------------------------------|---------------------------|-------------------------------------------------------------------------------------------------------------------|
+| `SessionStart`       | all                              | `session_start_context`   | Injects current git branch and dirty-file count as context                                                        |
+| `UserPromptSubmit`   | –                                | `block_secrets_in_prompt` | Blocks (exit 2) a prompt that looks like it contains an API key/secret                                            |
+| `PreToolUse`         | `Bash`                           | `bash_git_guard`          | Forces `ask` on state-changing git commands                                                                       |
+| `PreToolUse`         | `Bash`, `if: Bash(rm *)`         | inline `prompt` hook      | Cheap model judges whether an `rm` looks safe                                                                     |
+| `PreToolUse`         | `Edit\|Write`                    | `protect_files`           | Denies edits to `.env*`, `package-lock.json`, `.venv/`                                                            |
+| `PermissionRequest`  | `Bash`                           | `allow_readonly_git`      | Auto-approves read-only git (`status`, `log`, `diff`, `show`, `branch`)                                           |
+| `PostToolUse`        | `Edit\|Write`                    | `validate_edit`           | Compiles/parses just-written `.py`/`.json`/`.ipynb`; blocks with the error                                        |
+| `PostToolUseFailure` | –                                | `log_tool_failure`        | Logs failed tool calls to `logs/tool_failures.jsonl`                                                              |
+| `Notification`       | `permission_prompt\|idle_prompt` | `notify`                  | Beeps when Claude waits for you                                                                                   |
+| `Stop`               | –                                | `stop_no_em_dash`         | Reads the last assistant message, blocks if it breaks a style rule; guards on `stop_hook_active` to avoid looping |
+| `StopFailure`        | –                                | `stop_failure_log`        | Beeps and logs the API error type (`rate_limit`, `overloaded`, ...)                                               |
+| `PreCompact`         | –                                | `precompact_backup`       | Copies the transcript to `logs/transcripts/` before compaction                                                    |
+| `SessionEnd`         | –                                | `session_end_summary`     | Appends a one-line session summary to `logs/sessions.jsonl`                                                       |
+| `FileChanged`        | `.env`                           | `file_changed_env`        | Tells Claude a `.env` changed on disk, so it doesn't rely on a stale read                                         |
+| `ConfigChange`       | `project_settings`               | `config_change_warn`      | Warns (`systemMessage`) and logs when `settings.json` changes mid-session                                         |
 
 ## Observe-only events
 
 `Setup`, `UserPromptExpansion`, `PermissionDenied`, `PostToolBatch`, `MessageDisplay`, `SubagentStart`, `SubagentStop`,
 `TaskCreated`, `TaskCompleted`, `TeammateIdle`, `InstructionsLoaded`, `CwdChanged`, `DirectoryAdded`, `WorktreeRemove`,
 `PostCompact`, `PreModelSwitch`, `PostModelSwitch`, `Elicitation`, `ElicitationResult` are all wired to one generic
-`log_event.py`, run `async`, that appends the full payload to `logs/events.jsonl` so you can see what each event delivers.
+`log_event.py`, run `async`, that appends the full payload to `logs/events.jsonl` so you can see what each event
+delivers.
 `WorktreeCreate` is intentionally left unwired: a hook on it can take over worktree creation, so a plain logger could
 interfere.
 
@@ -107,7 +111,8 @@ All of the above use `"type": "command"`. Others:
 
 - **`prompt`** – sends the input to a cheap model (default Haiku) and acts on `{"ok": true/false, "reason": ...}`.
 - **`agent`** – like `prompt` but runs a full agentic loop with tools (e.g. "run the tests and confirm they pass"); slow
-  and costly per trigger. `{ "type": "agent", "prompt": "Run the test suite and confirm it passes. $ARGUMENTS", "timeout": 120 }`
+  and costly per trigger.
+  `{ "type": "agent", "prompt": "Run the test suite and confirm it passes. $ARGUMENTS", "timeout": 120 }`
 - **`http`** – POSTs the payload to a URL and acts on the response.
   `{ "type": "http", "url": "http://localhost:8080/hooks/pre-tool-use", "timeout": 30 }`
 - **`mcp_tool`** – calls a tool on a registered [MCP server](mcp-example.md).

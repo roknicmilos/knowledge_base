@@ -40,4 +40,5 @@ behavior/style.
 ## Stop sequences and prefilling (Claude API)
 
 Two request-level techniques for controlling *where a response ends* and *how it begins*. Both are API parameters, not
-Claude Code / claude.ai features. Details: [Stop sequences and prefilling](../claude/api/stop-sequences-and-prefilling.md).
+Claude Code / claude.ai features.
+Details: [Stop sequences and prefilling](../claude/api/stop-sequences-and-prefilling.md).

@@ -1,7 +1,8 @@
 # Built-in tools
 
 The native, always-available tools of the Claude Code harness, as opposed to anything added later via
-[MCP](../../concepts/tool-use-and-mcp.md#mcp--model-context-protocol) or a [skill](skills-and-commands.md). No setup or connection step.
+[MCP](../../concepts/tool-use-and-mcp.md#mcp--model-context-protocol) or a [skill](skills-and-commands.md). No setup or
+connection step.
 
 Core set:
 

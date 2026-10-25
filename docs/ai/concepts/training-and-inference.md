@@ -5,7 +5,8 @@ The lifecycle of a model and the building block behind semantic search.
 ## Pre-training
 
 The initial, large-scale pass that turns a randomly initialized network into a base model by predicting the next token
-over a massive, broad corpus. It is where general language ability, world knowledge and reasoning patterns come from, and
+over a massive, broad corpus. It is where general language ability, world knowledge and reasoning patterns come from,
+and
 what sets the [knowledge cutoff](../limitations.md#knowledge-cutoff) (the corpus is a fixed snapshot). You don't do it
 yourself; it is the extremely expensive, provider-run step.
 
@@ -22,7 +23,8 @@ format; often combined.
 
 ## Inference
 
-*Running* the model to produce output, as opposed to training it. Every response is an inference pass; it is what you pay
+*Running* the model to produce output, as opposed to training it. Every response is an inference pass; it is what you
+pay
 for per token in production, and what latency and pricing discussions refer to.
 
 ## Embedding
