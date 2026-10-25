@@ -6,9 +6,9 @@ cloud environments. It provides tools to connect disparate systems, automate wor
 extensive
 custom code or infrastructure management.
 
-Compared with neighbours: an [ESB](../architecture/monolith-vs-microservices.md#esb-vs-microservices) is a self-run,
+Compared with neighbours: an [ESB](monolith-vs-microservices.md#esb-vs-microservices) is a self-run,
 centralized
-integration bus; an [API gateway](../architecture/api-gateway.md) fronts your own APIs; [Kafka](../devops/kafka.md)
+integration bus; an [API gateway](api-gateway.md) fronts your own APIs; [Kafka](../devops/kafka.md)
 moves
 event streams; iPaaS is the managed, low-code way to wire SaaS and enterprise systems together.
 

@@ -12,12 +12,12 @@ Corrections from the review are already applied; time-sensitive facts are marked
 | [fundamentals/](fundamentals/)         | OOP, SOLID, typing, exceptions, DI, concurrency, mocking, paradigms, FSM             |
 | [computer-science/](computer-science/) | Data structures, algorithms, Big O                                                   |
 | [design/](design/)                     | UML/ERD modeling, MVC/MVVM                                                           |
-| [architecture/](architecture/)         | Scaling, load balancer, API gateway, monolith vs microservices, REST, caching/CDN, … |
+| [architecture/](architecture/)         | Scaling, load balancer, API gateway, monolith vs microservices, REST, caching/CDN, iPaaS, … |
 | [databases/](databases/)               | SQL vs NoSQL, indexes, views, transactions, FKs, query performance, N+1              |
 | [frontend/](frontend/)                 | React vs Angular, Next.js API layer and auth                                         |
 | [languages/](languages/)               | Python (incl. frameworks), Java, C#, PHP                                             |
 | [devops/](devops/)                     | CI/CD, cloud (VPC, AWS, GCP), Terraform, Kafka, search                               |
-| [ai/](ai/)                             | LLMs, fine-tuning vs prompting vs RAG, Bedrock, iPaaS                                |
+| [ai/](ai/)                             | LLMs, fine-tuning vs prompting vs RAG, Bedrock                                |
 | [tools/](tools/)                       | Git commit messages                                                                  |
 
 ## Open TODOs (carried over from the original docs)
@@ -27,7 +27,7 @@ Corrections from the review are already applied; time-sensitive facts are marked
 - GCP basics: project setup & billing, IAM, Compute Engine, GCS ([devops/cloud/gcp.md](devops/cloud/gcp.md))
 - Django security beyond CSRF ([languages/python/frameworks/django.md](languages/python/frameworks/django.md))
 - Python: design patterns, data types ([languages/python/README.md](languages/python/README.md))
-- iPaaS: deeper notes ([ai/ipaas.md](ai/ipaas.md))
+- iPaaS: deeper notes ([architecture/ipaas.md](architecture/ipaas.md))
 - Not exported from Google Drive: "Technical interview questions (and answers)" and "Basics of LLMs" docs
 
 Code samples referenced originally live in <https://github.com/roknicmilos/python-stuff>.
