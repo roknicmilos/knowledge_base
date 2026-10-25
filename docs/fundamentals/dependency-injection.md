@@ -27,4 +27,4 @@ dependency**). ASP.NET Core throws on this in Development when scope validation 
 FastAPI does DI with `Depends` –
 see [FastAPI dependency injection](../languages/python/frameworks/fastapi.md#dependency-injection).
 
-More Python examples: <https://github.com/roknicmilos/python-stuff/tree/main/design_patterns/dependency_injection>
+More Python examples: [`examples/python/design_patterns/dependency_injection`](../../examples/python/design_patterns/dependency_injection/README.md)

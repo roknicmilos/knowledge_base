@@ -30,4 +30,4 @@ Corrections from the review are already applied; time-sensitive facts are marked
 - iPaaS: deeper notes ([architecture/ipaas.md](architecture/ipaas.md))
 - Not exported from Google Drive: "Technical interview questions (and answers)" and "Basics of LLMs" docs
 
-Code samples referenced originally live in <https://github.com/roknicmilos/python-stuff>.
+Runnable code samples live in [`../examples/`](../examples/README.md).

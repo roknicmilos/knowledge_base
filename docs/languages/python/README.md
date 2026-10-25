@@ -77,6 +77,5 @@ Sequences of instructions with functions, loops and conditionals – the simples
 - [Python Tips book](https://book.pythontips.com/) (older, Python-2-era examples)
 - [Python GIL – Real Python](https://realpython.com/python-gil/)
 
-> **TODO:** design patterns in Python (see <https://github.com/roknicmilos/python-stuff/tree/main/design_patterns>) and
-> a
-> page on built-in data *types*.
+> **TODO:** design patterns in Python (see [`examples/python/design_patterns`](../../../examples/python/design_patterns/README.md)) and
+> a page on built-in data *types*.

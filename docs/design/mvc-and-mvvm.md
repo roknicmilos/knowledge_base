@@ -2,8 +2,8 @@
 
 Both are **architectural (UI) patterns** that separate concerns; they are not GoF design patterns.
 
-> **TODO:** actual design patterns (GoF: creational/structural/behavioral) with Python examples – see the repo
-> <https://github.com/roknicmilos/python-stuff/tree/main/design_patterns> (`gang_of_4/`, `dependency_injection/`).
+> **TODO:** actual design patterns (GoF: creational/structural/behavioral) with Python examples – see
+> [`examples/python/design_patterns`](../../examples/python/design_patterns/README.md) (`gang_of_4/`, `dependency_injection/`).
 
 ## MVC – Model-View-Controller
 

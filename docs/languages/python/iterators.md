@@ -59,3 +59,5 @@ Iterators and generators keep one item in memory at a time and compute the next 
 processing, so you can chain stages into memory-efficient pipelines, and they are the only way to process infinite
 streams.
 For custom container classes implement the iterable protocol so they work in `for` loops.
+
+Examples: [`examples/python/iterations`](../../../examples/python/iterations/README.md).

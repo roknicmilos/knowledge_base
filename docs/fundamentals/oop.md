@@ -115,9 +115,9 @@ def animal_sound(animal: Animal):
     return animal.speak()
 ```
 
-(The original repo example uses `@abstractmethod` without inheriting from `ABC`, which does **not** enforce anything.)
+(`@abstractmethod` without inheriting from `ABC` would **not** enforce anything.)
 
-Source examples: <https://github.com/roknicmilos/python-stuff/tree/main/oop>
+Source examples: [`examples/python/oop`](../../examples/python/oop)
 
 ## Inheritance across languages
 

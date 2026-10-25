@@ -47,7 +47,7 @@ def grandmothers_count():
     return count
 ```
 
-Source: <https://github.com/roknicmilos/python-stuff/tree/main/bigO>
+Source: [`examples/python/bigO`](../../examples/python/bigO)
 
 ## Python complexities (cheat sheet)
 
