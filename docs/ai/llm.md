@@ -61,3 +61,21 @@ analysis.
 - Traditional ML typically needs expertise, labeled training data, compute time and hardware to train a model.
 
 Next: [fine-tuning vs prompt engineering vs RAG](fine-tuning-prompting-rag.md).
+
+## Model, traditional AI and generative AI
+
+- **Model:** the trained neural network that turns input text into output text. It holds the knowledge and reasoning
+  ability, frozen at training time ([pre-training](concepts/training-and-inference.md#pre-training)). Models come in
+  families (small/fast to large/capable), so pick the size/speed/cost trade-off per task.
+- **Traditional (discriminative) AI:** takes an input and produces a narrow, fixed kind of output (a category, score,
+  label): spam filters, fraud detection, recommendation ranking, image classifiers. Answers "which bucket?".
+- **Generative AI:** produces new, open-ended content (text, images, audio, code, video) piece by piece. Answers "what
+  comes next?". An LLM is its text-focused branch.
+
+Use traditional AI when the answer space is fixed and known (fraud yes/no, one of five categories): it is typically
+cheaper, faster and easier to evaluate. Use generative AI/an LLM when the output itself must be created, not selected.
+
+## Where to go next
+
+[Concepts](concepts/README.md) (tokens, sampling, prompting, agents), [limitations](limitations.md),
+[Claude](claude/README.md).

@@ -17,7 +17,7 @@ Corrections from the review are already applied; time-sensitive facts are marked
 | [frontend/](frontend/README.md) | React vs Angular, Next.js API layer and auth                                                |
 | [languages/](languages/README.md) | Python (incl. frameworks), Java, C#, PHP                                                    |
 | [devops/](devops/README.md) | CI/CD, cloud (VPC, AWS, GCP), Terraform, Kafka, search                                      |
-| [ai/](ai/README.md) | LLMs, fine-tuning vs prompting vs RAG, Bedrock                                              |
+| [ai/](ai/README.md) | LLMs, limitations, RAG, prompting, agents, Claude Code and the Claude API |
 | [tools/](tools/README.md) | Git commit messages                                                                         |
 
 ## Open TODOs (carried over from the original docs)
